@@ -1,0 +1,63 @@
+<div>
+    <br>
+    <div class="row">
+        <h1>{{heading}}</h1>
+    </div>
+
+    <form name="addForm">
+        <div class="panel panel-info">
+            <div class="panel-heading">Blog Form</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group {{blogTitleFeedback}}">
+                            <label>Title</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="1" ng-change="validBlogName(addForm.blogTitle.$invalid)" ng-model="blog.blogTitle" name="blogTitle" ng-pattern="/^[a-zA-Z0-9  ]*$/" required>
+                            <div ng-show="blogTitleValid" style="color: red">Please Enter valid Name</div>
+                            <span ng-show="blogTitleSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="blogTitleError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+
+                        <div class="form-group {{blogWriterFeedback}}">
+                            <label>Writer</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="2" ng-change="blogWriter(addForm.blogWriter.$invalid)" ng-model="blog.blogWriter" name="blogWriter" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="blogWriterValid" style="color: red">Please Enter valid blogWriter</div>
+                            <span ng-show="blogWriterSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="blogWriterError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                       	
+                        <div class="form-group {{blogDataFeedback}}">
+                            <label>Blog Content</label>
+                            <label style="color: red">&nbsp*</label>
+                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="9" ng-change="validBlogData(addForm.blogData.$invalid)" ng-model="blog.blogData" name="blogData" ng-pattern="/^[a-zA-Z  ]*$/" required/>
+                            <div ng-show="blogDataValid" style="color: red">Please Enter valid Occupation</div>
+                            <span ng-show="blogDataSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="blogDataError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+
+                </div>
+
+                <div class="row text-center" ng-hide="addForm.$valid" style="color: red">Enter all mandatory fields marked with *</div>
+
+                <div class="row text-center">
+                    <button class="btn btn-success" tabindex="10" type="button" ng-disabled="addForm.$invalid" ng-click="addBlog()">
+                        <i class="fa fa-check"></i>&nbsp; Save
+                    </button>
+
+                    <button class="btn btn-danger" tabindex="11" type="button" ng-click="cancelAddBlog()">
+                        <i class="fa fa-times"></i>&nbsp; Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

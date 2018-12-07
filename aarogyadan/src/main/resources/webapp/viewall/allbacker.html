@@ -1,0 +1,407 @@
+
+<!-- Page Wrap ===========================================-->
+<div id="wrap"> 
+  
+  <!--======= TOP BAR =========-->
+  <div class="top-bar">
+    <div class="container">
+      <ul class="left-bar-side">
+        <li>
+          <p class="font-lora"><i><img src="asset-design/images/top-bar-icon.png" alt=""></i> No one has Ever Become Poor from Giving! </p>
+        </li>
+      </ul>
+      <ul class="right-bar-side social_icons">
+        <li class="padding-r-20">
+          <p class="font-lora">Phone: (01) 800 433 633</p>
+        </li>
+        <li>
+          <p class="font-lora">Mail: aarogyadaan01@gmail.com</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!--======= HEADER START =========-->
+  <header class="sticky">
+    <div class="container"> 
+      
+      <!--======= LOGO =========-->
+      <div class="logo"> <a href="#."><img src="asset-design/images/logo.png" alt="" ></a> </div>
+      
+      <!--======= DONATE NOW BTN =========-->
+      <!-- <div class="btn-right"> <a ui-sref="login" class="btn popup-with-zoom-anim"><i class="fa fa-user-secret"></i>Login</a> </div> -->
+      <div class="btn-right"> <a href="#patient" class="btn popup-with-zoom-anim">Join as Patient</a> </div>
+      <div class="btn-right"> <a href="#backer" class="btn popup-with-zoom-anim">Join as Backer</a> </div>
+    </div>
+    
+    <!--======= NAVIGATION =========-->
+    <nav>
+      <div class="container">
+        <ul id="ownmenu" class="ownmenu">
+          <li><a ui-sref="main">Home</a></li>
+          <li><a href="">About Us </a></li>
+          <li><a href="">Events </a></li>
+          <li><a ui-sref="gallery">Gallery </a></li>
+          <li><a href="">Blog </a></li>
+          <li><a ui-sref="feedback">Feedback</a></li>
+          <li><a ui-sref="faq">FAQ</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!--======= HEADER END =========--> 
+  <!--======= BANNER =========-->
+  <div class="sub-banner">
+    <div class="overlay">
+      <div class="container">
+        <h3>All Backers</h3>
+        
+        <!--======= BREADCRUMB =========-->
+        <ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li class="active">Backers</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  
+  <!--======= CONTENT =========-->
+  <div class="content"> 
+    <!--======= HOW CAN YOU HELP =========-->
+    <section class="donatores">
+      <div class="container"> 
+        
+        <!--======= TITTLE =========-->
+        <div class="tittle">
+          <h2>Our <strong></strong> Backers</h2>
+        </div>
+        
+        <!--======= DONATOR ROWS =========-->
+        <div class="row"> 
+          
+          <!--======= DONATOR 1 =========-->
+          <!-- <div class="col-md-6"> -->
+            <ul class="row">
+              
+              <!--======= DONATOR 1 =========-->
+              <li class="col-sm-4" ng-repeat="tenant in tenantsData track by $index">
+                <div class="avatar"> <img class="img-responsive" src="asset-design/images/ghanasham-kelkar.jpg" alt="" > </div>
+                <div class="donor-details">
+                  <h5>{{tenant.backerName}}</h5>
+                  <p class="font-lora">{{tenant.backerCity}}</p>
+                  <span class="font-lora">Mobile : <strong>{{tenant.backerPhone}}</strong></span> </div>
+              </li>
+              
+              <!--======= DONATOR 2 =========-->
+              <!-- <li class="col-sm-6">
+                <div class="avatar"> <img class="img-responsive" src="asset-design/images/dnyashwar rayate.jpg" alt="" > </div>
+                <div class="donor-details">
+                  <h5>Dnyashwar Rayate</h5>
+                  <p class="font-lora">Baramati</p>
+                  <span class="font-lora">Mobile : <strong>9999999999</strong></span> </div>
+              </li> -->
+            </ul>
+          <!-- </div> -->
+          
+          <!--======= DONATOR ROW =========-->
+          
+        </div>
+      </div>
+    </section>
+    
+  </div>
+  
+  <!--======= FOOTER =========-->
+  <footer>
+    <div class="container"> 
+      
+      <!--======= FOOTER ROW =========-->
+      <div class="row">
+        <div class="col-md-6"> 
+          
+          <!--======= FOOTER 1 =========-->
+          <ul class="row">
+            
+            <!--======= KEEP IN TOUCH =========-->
+            <li class="col-sm-6 shadow">
+              <ul class="social_icons">
+                <li class="facebook"><a href="#."><i class="fa fa-facebook"></i></a></li>
+                <li class="twitter"><a href="#."><i class="fa fa-twitter"></i></a></li>
+                <li class="googleplus"><a href="#."><i class="fa fa-google-plus"></i></a></li>
+                <li class="instagram"><a href="#."><i class="fa fa-instagram"></i></a></li>
+                <li class="soundcloud"><a href="#."><i class="fa fa-rss"></i></a></li>
+              </ul>
+              <p>Email : info@Example.com</p>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+    <br>
+    <!--======= RIGHTS =========-->
+  </footer>
+
+	<!--======= BECOME A volunteer =========-->
+  <div id="volunteer" class="donation-pop zoom-anim-dialog mfp-hide">
+    <h6>Register As volunteer</h6>
+    <!--======= DONATE LIGHT BOX =========-->
+    <div class="pop-inner">
+      <form>
+        
+        <!--======= CRADIT CARD INFO =========-->
+        <ul class="row per-info">
+          <li class="col-lg-12">
+            <label>give Your Information</label>
+          </li>
+          <li class="col-sm-12">
+            <input type="text" name="name" placeholder="Name">
+          </li>
+          
+          <li class="col-sm-6">
+            <input type="email" name="Email" placeholder="Email Address">
+          </li>
+          <li class="col-sm-6">
+            <input type="text" name="phone" placeholder="phone">
+          </li>
+          <li class="col-sm-6">
+            <input type="text" name="phone" placeholder="Occupation">
+          </li>
+          <li class="col-sm-12">
+            <textarea placeholder="Address" style="height:75px"></textarea>
+          </li>
+          <li class="col-sm-12">
+            <textarea placeholder="Vision"></textarea>
+          </li>
+          <li class="col-sm-12">
+            <button type="submit" class="btn">SUBMIT DETAILS</button>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+  <!--======= BECOME A volunteer END =========--> 
+
+  <!--======= BECOME A Backer =========-->
+  <div id="backer" class="donation-pop zoom-anim-dialog mfp-hide">
+  
+    <h6>Register As Backer</h6>
+    <!--======= DONATE LIGHT BOX =========-->
+    <div class="pop-inner">
+      <form name="addForm">
+        
+        <!--======= CRADIT CARD INFO =========-->
+        <ul class="row per-info">
+          <li class="col-lg-12">
+            <label>give Your Information</label>
+          </li>
+          <li class="col-sm-12">
+            <input tabindex="1" ng-change="validBackerName(addForm.backerName.$invalid)" ng-model="backer.backerName" name="backerName" ng-pattern="/^[a-zA-Z0-9  ]*$/" placeholder="Name" required>
+                            <div ng-show="backerNameValid" style="color: red">Please Enter valid Name</div>
+                            <span ng-show="backerNameSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerNameError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          
+          <li class="col-sm-6">
+            
+                            <input placeholder="City" tabindex="2" ng-change="validCity(addForm.city.$invalid)" ng-model="backer.backerCity" name="city" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="backerCityValid" style="color: red">Please Enter valid City</div>
+                            <span ng-show="backerCitySuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerCityError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          <li class="col-sm-6">
+            <input placeholder="Taluka" tabindex="3" ng-change="validTal(addForm.tal.$invalid)" ng-model="backer.backerTal" name="tal" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="backerTalValid" style="color: red">Please Enter valid Taluka</div>
+                            <span ng-show="backerTalSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerTalError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          <li class="col-sm-6">
+            <input placeholder="District" tabindex="4" ng-change="validDist(addForm.dist.$invalid)" ng-model="backer.backerDist" name="dist" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="backerDistValid" style="color: red">Please Enter valid District</div>
+                            <span ng-show="backerDistSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerDistError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          <li class="col-sm-6">
+            <input placeholder="Phone" tabindex="5" type="number" ng-change="validBackerPhone(addForm.backerPhone.$invalid)" ng-model="backer.backerPhone" name="backerPhone" ngMinlength="10" ngMaxlength="10" placeholder="eg :(XXXXXXXXXX) 10 digits  " ng-pattern="/^\d{10}$/" required>
+                            <div ng-show="backerPhoneValid" style="color: red">Please Enter valid Phone Number</div>
+                            <span ng-show="backerPhoneSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerPhoneError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          <li class="col-sm-6">
+            <input placeholder="Aadhar No" tabindex="6" type="number" ng-change="validBackerAadharNo(addForm.backerAadharNo.$invalid)" ng-model="backer.backerAadharNo" name="backerAadharNo" placeholder="eg :(XXXXXXXXXXXX) 12 digits  "  required>
+                            <div ng-show="backerAadharNoValid" style="color: red">Please Enter valid Aadhar Number</div>
+                            <span ng-show="backerAadharNoSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerAadharNoError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          <li class="col-sm-6">
+            <input placeholder="Email Address" tabindex="7" ng-disabled="editMode" ng-change="validBackerEmail(addForm.backerEmail.$invalid)" ng-model="backer.backerEmail" name="backerEmail" ng-maxlength="50" ng-minlength="7" ng-pattern="/^[a-z]+[a-z0-9._+]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="eg :(aaa@aa.aaa)" required>
+                            <div ng-show="backerEmailValid" style="color: red">Please Enter valid Email ID</div>
+                            <span ng-show="backerEmailSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerEmailError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+
+          <li class="col-sm-6">
+            <input placeholder="Nature of contribution Financial/ Things (objects)/Services" tabindex="8" ng-change="validBackerContribution(addForm.backerContribution.$invalid)" ng-model="backer.backerContribution" name="backerContribution" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="backerContributionValid" style="color: red">Please Enter valid Nature Of Contribution</div>
+                            <span ng-show="backerContributionSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerContributionError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          <li class="col-sm-6">
+            <input placeholder="Amount of Contribution/Donation Monthly/Yearly" tabindex="9" ng-change="validBackerPaymentMode(addForm.paymentMode.$invalid)" ng-model="backer.backerPaymentMode" name="backerPaymentMode" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="backerPaymentModeValid" style="color: red">Please Enter valid PaymentMode</div>
+                            <span ng-show="backerPaymentModeSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerPaymentModeError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          <li class="col-sm-6">
+            <label style="color: red">&nbsp*</label>
+                            <input placeholder="Mode of payment By cash/Cheque/Demand draft/ ECS" tabindex="10" type="number" ng-change="validBackerAmount(addForm.backerAmount.$invalid)" ng-model="backer.backerAmount" name="backerAmount" ngMinlength="1" ngMaxlength="12" placeholder="  " required>
+                            <div ng-show="backerAmountValid" style="color: red">Please Enter valid Amount</div>
+                            <span ng-show="backerAmountSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerAmountError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          <li class="col-sm-12">
+            <textarea class="form-control" rows="5" autocomplete="off" tabindex="11" ng-change="validBackerVision(addForm.backerVision.$invalid)" ng-model="backer.backerVision" name="backerVision" ng-pattern="/^[a-zA-Z  ]*$/" required/>
+                            <div ng-show="backerVisionValid" style="color: red">Please Enter valid Occupation</div>
+                            <span ng-show="backerVisionSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerVisionError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          <li class="col-sm-12">
+          	<div class="row text-center" ng-hide="addForm.$valid" style="color: red">Enter all mandatory fields marked with *</div>
+          </li>
+          <li class="col-sm-12">
+            <button type="submit" class="btn" tabindex="12" ng-disabled="addForm.$invalid" ng-click="addBacker()">SUBMIT DETAILS</button>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+  <!--======= BECOME A Backer END =========--> 
+
+  <!--======= BECOME A Patient =========-->
+  <div id="patient" class="donation-pop zoom-anim-dialog mfp-hide">
+    <h6>Register As Patient</h6>
+    <!--======= DONATE LIGHT BOX =========-->
+    <div class="pop-inner">
+      <form>
+        
+        <!--======= CRADIT CARD INFO =========-->
+        <ul class="row per-info">
+          <li class="col-lg-12">
+            <label>give Your Information</label>
+          </li>
+          <li class="col-sm-12">
+          	<div class="form-group {{patientNameFeedback}}">
+            	<input type="text" placeholder="Name" tabindex="1" ng-change="validPatientName(addForm.patientName.$invalid)" ng-model="patient.patientName" name="patientName" ng-pattern="/^[a-zA-Z0-9  ]*$/" required>
+            	<div ng-show="patientNameValid" style="color: red">Please Enter valid Name</div>
+                <span ng-show="patientNameSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                <span ng-show="patientNameError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </li>
+          <!-- <li class="col-sm-6">
+            <input type="text" name="last name" placeholder="Last Name">
+          </li> -->
+          <li class="col-sm-6">
+          	<div class="form-group {{patientCityFeedback}}">
+            	<input type="text" placeholder="City" tabindex="2" ng-change="validPatientCity(addForm.patientCity.$invalid)" ng-model="patient.patientCity" name="patientCity" ng-pattern="/^[a-zA-Z  ]*$/" required>
+            	<div ng-show="patientCityValid" style="color: red">Please Enter valid City</div>
+            	<span ng-show="patientCitySuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+            	<span ng-show="patientCityError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </li>
+          <li class="col-sm-6">
+          	<div class="form-group {{patientTalFeedback}}">
+            	<input type="text" placeholder="Taluka" tabindex="3" ng-change="validPatientTal(addForm.patientTal.$invalid)" ng-model="patient.patientTal" name="patientTal" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                <div ng-show="patientTalValid" style="color: red">Please Enter valid Taluka</div>
+                <span ng-show="patientTalSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                <span ng-show="patientTalError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </li>
+          <li class="col-sm-6">
+          	<div class="form-group {{patientDistFeedback}}">
+            	<input type="text" placeholder="District" tabindex="4" ng-change="validPatientDist(addForm.patientDist.$invalid)" ng-model="patient.patientDist" name="patientDist" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="patientDistValid" style="color: red">Please Enter valid District</div>
+                            <span ng-show="patientDistSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="patientDistError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </li>
+          
+          <li class="col-sm-6">
+          	<div class="form-group {{patientPhoneFeedback}}">
+            <input type="text" placeholder="Phone" tabindex="5" type="number" ng-change="validPatientPhone(addForm.patientPhone.$invalid)" ng-model="patient.patientPhone" name="patientPhone" ngMinlength="10" ngMaxlength="10" placeholder="eg :(XXXXXXXXXX) 10 digits  " ng-pattern="/^\d{10}$/" required>
+                            <div ng-show="patientPhoneValid" style="color: red">Please Enter valid Phone Number</div>
+                            <span ng-show="patientPhoneSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="patientPhoneError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+          </li>
+          
+          <li class="col-sm-6">
+          	<div class="form-group {{patientAadharnoFeedback}}">
+            <input type="text" placeholder="Aadhar No" tabindex="6" type="number" ng-change="validPatientAadharNo(addForm.patientAadharno.$invalid)" ng-model="patient.patientAadharno" name="patientAadharno" placeholder="eg :(XXXXXXXXXXXX) 12 digits  "  required>
+                            <div ng-show="patientAadharnoValid" style="color: red">Please Enter valid Aadhar Number</div>
+                            <span ng-show="patientAadharnoSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="patientAadharnoError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+          </li>
+		  <li class="col-sm-6">
+		  	<div class="form-group {{patientEmailFeedback}}">
+            <input type="email" placeholder="Email Address" tabindex="7" ng-disabled="editMode" ng-change="validPatientEmail(addForm.patientEmail.$invalid)" ng-model="patient.patientEmail" name="patientEmail" ng-maxlength="50" ng-minlength="7" ng-pattern="/^[a-z]+[a-z0-9._+]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="eg :(aaa@aa.aaa)" required>
+                            <div ng-show="patientEmailValid" style="color: red">Please Enter valid Email ID</div>
+                            <span ng-show="patientEmailSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="patientEmailError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+          </li>
+          <li class="col-sm-6">
+          	<div class="form-group {{patientDiseseFeedback}}">
+            <input type="text" placeholder="Nature of disease" tabindex="8" ng-change="validPatientDisese(addForm.patientDisese.$invalid)" ng-model="patient.patientDisese" name="patientDisese" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="patientDiseseValid" style="color: red">Please Enter valid Nature Of Disese</div>
+                            <span ng-show="patientDiseseSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="patientDiseseError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+          </li>
+          <li class="col-sm-6">
+          	<div class="form-group {{patientHelptypeFeedback}}">
+            <input type="text" placeholder="Help needed in Financial/Things (objects)/Services" tabindex="9" ng-change="validPatientHelptype(addForm.paymentMode.$invalid)" ng-model="patient.patientHelptype" name="patientHelptype" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="patientHelptypeValid" style="color: red">Please Enter valid Helptype</div>
+                            <span ng-show="patientHelptypeSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="patientHelptypeError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+          </li>
+          <li class="col-sm-6">
+          	<div class="form-group {{patientAccountnoFeedback}}">
+            <input type="text" placeholder="Enter Your Bank Account Number" tabindex="10" type="number" ng-change="validPatientAccountno(addForm.patientAccountno.$invalid)" ng-model="patient.patientAccountno" name="patientAccountno" ngMinlength="10" ngMaxlength="12" placeholder="  " required>
+                            <div ng-show="patientAccountnoValid" style="color: red">Please Enter valid Accountno</div>
+                            <span ng-show="patientAccountnoSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="patientAccountnoError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+          </li>
+		  
+          <li class="col-sm-12">
+          	<div class="form-group {{patientDoctorinfoFeedback}}">
+            <textarea placeholder="Doctor’s/ Hospital’s information" rows="5" autocomplete="off" tabindex="11" ng-change="validPatientDoctorinfo(addForm.patientDoctorinfo.$invalid)" ng-model="patient.patientDoctorinfo" name="patientDoctorinfo" ng-pattern="/^[a-zA-Z  ]*$/" required/>
+                            <div ng-show="patientDoctorinfoValid" style="color: red">Please Enter valid Occupation</div>
+                            <span ng-show="patientDoctorinfoSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="patientDoctorinfoError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+          </li>
+          <li class="col-sm-12">
+            <button type="submit" class="btn"  tabindex="12" ng-disabled="addForm.$invalid" ng-click="addPatient()">SUBMIT DETAILS</button>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+  <!--======= BECOME A Patient END =========--> 
+
+</div>
+<script src="asset-design/js/jquery-1.11.0.min.js"></script> 
+<script src="asset-design/js/bootstrap.min.js"></script> 
+<script src="asset-design/js/own-menu.js"></script> 
+<script src="asset-design/js/jquery.flexslider.js"></script> 
+<script src="asset-design/js/counter.js"></script> 
+<script src="asset-design/js/owl.carousel.min.js"></script> 
+<script src="asset-design/js/waypoints.min.js"></script> 
+<script src="asset-design/js/jquery.isotope.min.js"></script> 
+<script src="asset-design/js/jquery.nouislider.min.js"></script> 
+<script src="asset-design/js/jquery.magnific-popup.min.js"></script> 
+<script src="asset-design/js/jquery.downCount.js"></script> 
+<script src="asset-design/js/main.js"></script>  

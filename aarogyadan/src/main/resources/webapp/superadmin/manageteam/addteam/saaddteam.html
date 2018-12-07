@@ -1,0 +1,108 @@
+<div>
+    <br>
+    <div class="row">
+        <h1>{{heading}}</h1>
+    </div>
+
+    <form name="addForm">
+        <div class="panel panel-info">
+            <div class="panel-heading">Team Form</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group {{tennatNameFeedback}}">
+                            <label>Name</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="1" ng-change="validTenantName(addForm.tenantName.$invalid)" ng-model="tenant.tenantName" name="tenantName" ng-pattern="/^[a-zA-Z0-9  ]*$/" required>
+                            <div ng-show="tenantNameValid" style="color: red">Please Enter valid Name</div>
+                            <span ng-show="tenantNameSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="tenantNameError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group {{tenantCityFeedback}}">
+                            <label>City</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="2" ng-change="validCity(addForm.city.$invalid)" ng-model="tenant.tenantCity" name="city" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="tenantCityValid" style="color: red">Please Enter valid City</div>
+                            <span ng-show="tenantCitySuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="tenantCityError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group {{tenantTalFeedback}}">
+                            <label>Taluka</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="3" ng-change="validTal(addForm.tal.$invalid)" ng-model="tenant.tenantTal" name="tal" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="tenantTalValid" style="color: red">Please Enter valid Taluka</div>
+                            <span ng-show="tenantTalSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="tenantTalError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group {{tenantDistFeedback}}">
+                            <label>District</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="4" ng-change="validDist(addForm.dist.$invalid)" ng-model="tenant.tenantDist" name="dist" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="tenantDistValid" style="color: red">Please Enter valid District</div>
+                            <span ng-show="tenantDistSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="tenantDistError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group {{tenantPhoneFeedback}}">
+                            <label>Phone/Mobile Number</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="5" type="number" ng-change="validTenantPhone(addForm.tenantPhone.$invalid)" ng-model="tenant.tenantPhone" name="tenantPhone" ngMinlength="10" ngMaxlength="10" placeholder="eg :(XXXXXXXXXX) 10 digits  " ng-pattern="/^\d{10}$/" required>
+                            <div ng-show="tenantPhoneValid" style="color: red">Please Enter valid Phone Number</div>
+                            <span ng-show="tenantPhoneSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="tenantPhoneError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+
+                        <div class="form-group {{tennatEmailFeedback}}">
+                            <label>Email</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="6" ng-disabled="editMode" ng-change="validTenantEmail(addForm.tenantEmail.$invalid)" ng-model="tenant.tenantEmail" name="tenantEmail" ng-maxlength="50" ng-minlength="7" ng-pattern="/^[a-z]+[a-z0-9._+]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="eg :(aaa@aa.aaa)" required>
+                            <div ng-show="tenantEmailValid" style="color: red">Please Enter valid Email ID</div>
+                            <span ng-show="tenantEmailSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="tenantEmailError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group {{tenantVisionFeedback}}">
+                            <label>Vision</label>
+                            <label style="color: red">&nbsp*</label>
+                            <textarea class="form-control" rows="7" autocomplete="off" tabindex="6" ng-change="validTenantVision(addForm.tenantVision.$invalid)" ng-model="tenant.tenantVision" name="tenantVision" ng-pattern="/^[a-zA-Z  ]*$/" required/>
+                            <div ng-show="tenantVisionValid" style="color: red">Please Enter valid Occupation</div>
+                            <span ng-show="tenantVisionSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="tenantVisionError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group {{tennatOccupationFeedback}}">
+                            <label>Occupation</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="8" ng-change="validTenantOccupation(addForm.tenantOccupation.$invalid)" ng-model="tenant.tenantOccupation" name="tenantOccupation" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="tenantOccupationValid" style="color: red">Please Enter valid Occupation</div>
+                            <span ng-show="tenantOccupationSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="tenantOccupationError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+
+                </div>
+
+                <div class="row text-center" ng-hide="addForm.$valid" style="color: red">Enter all mandatory fields marked with *</div>
+
+                <div class="row text-center">
+                    <button class="btn btn-success" tabindex="9" type="button" ng-disabled="addForm.$invalid" ng-click="addTenant()">
+                        <i class="fa fa-check"></i>&nbsp; Save
+                    </button>
+
+                    <button class="btn btn-danger" tabindex="10" type="button" ng-click="cancelAddVolunteer()">
+                        <i class="fa fa-times"></i>&nbsp; Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

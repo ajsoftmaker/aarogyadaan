@@ -1,0 +1,146 @@
+<div>
+    <br>
+    <div class="row">
+        <h1>{{heading}}</h1>
+    </div>
+
+    <form name="addForm">
+        <div class="panel panel-info">
+            <div class="panel-heading">Backer Form</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group {{backerNameFeedback}}">
+                            <label>Name</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="1" ng-change="validBackerName(addForm.backerName.$invalid)" ng-model="backer.backerName" name="backerName" ng-pattern="/^[a-zA-Z0-9  ]*$/" required>
+                            <div ng-show="backerNameValid" style="color: red">Please Enter valid Name</div>
+                            <span ng-show="backerNameSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerNameError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+
+                        <div class="form-group {{backerCityFeedback}}">
+                            <label>City</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="2" ng-change="validCity(addForm.city.$invalid)" ng-model="backer.backerCity" name="city" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="backerCityValid" style="color: red">Please Enter valid City</div>
+                            <span ng-show="backerCitySuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerCityError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group {{backerTalFeedback}}">
+                            <label>Taluka</label>
+                            <label style="color: red">&nbsp*</label>
+                            <!-- <input class="form-control" tabindex="3" ng-change="validTal(addForm.tal.$invalid)" ng-model="backer.backerTal" name="tal" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="backerTalValid" style="color: red">Please Enter valid Taluka</div>
+                            <span ng-show="backerTalSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerTalError" class="glyphicon glyphicon-remove form-control-feedback"></span> -->
+                            <select class="form-control" style="margin-top: 12px;" ng-model="backer.backerTal" name="backerTal" ng-options="x for x in tal">
+							</select>
+                        </div>
+                        
+                        <div class="form-group {{backerDistFeedback}}">
+                            <label>District</label>
+                            <label style="color: red">&nbsp*</label>
+                            <!-- <input class="form-control" tabindex="4" ng-change="validDist(addForm.dist.$invalid)" ng-model="backer.backerDist" name="dist" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="backerDistValid" style="color: red">Please Enter valid District</div>
+                            <span ng-show="backerDistSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerDistError" class="glyphicon glyphicon-remove form-control-feedback"></span> -->
+                            <select class="form-control" style="margin-top: 12px;" ng-model="backer.backerDist" name="backerDist" ng-options="x for x in dist">
+							</select>
+                        </div>
+
+                        <div class="form-group {{backerPhoneFeedback}}">
+                            <label>Phone/Mobile Number</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="3" type="number" ng-change="validBackerPhone(addForm.backerPhone.$invalid)" ng-model="backer.backerPhone" name="backerPhone" ngMinlength="10" ngMaxlength="10" placeholder="eg :(XXXXXXXXXX) 10 digits  " ng-pattern="/^\d{10}$/" required>
+                            <div ng-show="backerPhoneValid" style="color: red">Please Enter valid Phone Number</div>
+                            <span ng-show="backerPhoneSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerPhoneError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group {{backerAadharNoFeedback}}">
+                            <label>Aadhar Number</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="4" type="number" ng-change="validBackerAadharNo(addForm.backerAadharNo.$invalid)" ng-model="backer.backerAadharNo" name="backerAadharNo" placeholder="eg :(XXXXXXXXXXXX) 12 digits  "  required>
+                            <div ng-show="backerAadharNoValid" style="color: red">Please Enter valid Aadhar Number</div>
+                            <span ng-show="backerAadharNoSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerAadharNoError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+
+                        <div class="form-group {{backerEmailFeedback}}">
+                            <label>Email</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="5" ng-disabled="editMode" ng-change="validBackerEmail(addForm.backerEmail.$invalid)" ng-model="backer.backerEmail" name="backerEmail" ng-maxlength="50" ng-minlength="7" ng-pattern="/^[a-z]+[a-z0-9._+]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="eg :(aaa@aa.aaa)" required>
+                            <div ng-show="backerEmailValid" style="color: red">Please Enter valid Email ID</div>
+                            <span ng-show="backerEmailSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerEmailError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+
+                        <div class="form-group {{backerContributionFeedback}}">
+                            <label>Nature Of Contribution</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="6" ng-change="validBackerContribution(addForm.backerContribution.$invalid)" ng-model="backer.backerContribution" name="backerContribution" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="backerContributionValid" style="color: red">Please Enter valid Nature Of Contribution</div>
+                            <span ng-show="backerContributionSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerContributionError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group {{backerPaymentModeFeedback}}">
+                            <label>Mode Of Payment(Cash/Cheque/Demand draft/ECS)</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="7" ng-change="validBackerPaymentMode(addForm.paymentMode.$invalid)" ng-model="backer.backerPaymentMode" name="backerPaymentMode" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="backerPaymentModeValid" style="color: red">Please Enter valid PaymentMode</div>
+                            <span ng-show="backerPaymentModeSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerPaymentModeError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group {{backerAmountFeedback}}">
+                            <label>Amount</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="8" type="number" ng-change="validBackerAmount(addForm.backerAmount.$invalid)" ng-model="backer.backerAmount" name="backerAmount" ngMinlength="1" ngMaxlength="12" placeholder="  " required>
+                            <div ng-show="backerAmountValid" style="color: red">Please Enter valid Amount</div>
+                            <span ng-show="backerAmountSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerAmountError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+
+                        <div class="form-group {{backerVisionFeedback}}">
+                            <label>Vision</label>
+                            <label style="color: red">&nbsp*</label>
+                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="9" ng-change="validBackerVision(addForm.backerVision.$invalid)" ng-model="backer.backerVision" name="backerVision" ng-pattern="/^[a-zA-Z  ]*$/" required/>
+                            <div ng-show="backerVisionValid" style="color: red">Please Enter valid Occupation</div>
+                            <span ng-show="backerVisionSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="backerVisionError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div  class="form-group">
+                        	<label>Vision</label>
+                            <label style="color: red">&nbsp*</label>
+                        	<select class="form-control" ng-model="backer.backerPreferences" name="backerPreferences" ng-options="x for x in pref">
+							</select>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+
+                </div>
+
+                <div class="row text-center" ng-hide="addForm.$valid" style="color: red">Enter all mandatory fields marked with *</div>
+
+                <div class="row text-center">
+                    <button class="btn btn-success" tabindex="10" type="button" ng-disabled="addForm.$invalid" ng-click="addBacker()">
+                        <i class="fa fa-check"></i>&nbsp; Save
+                    </button>
+
+                    <button class="btn btn-danger" tabindex="11" type="button" ng-click="cancelAddBacker()">
+                        <i class="fa fa-times"></i>&nbsp; Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

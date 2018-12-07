@@ -1,0 +1,156 @@
+<div id="wrap"> 
+  
+  <!--======= TOP BAR =========-->
+  <div class="top-bar">
+    <div class="container">
+      <ul class="left-bar-side">
+        <li>
+          <p class="font-lora"><i><img src="asset-design/images/top-bar-icon.png" alt=""></i> No one has Ever Become Poor from Giving! </p>
+        </li>
+      </ul>
+      <ul class="right-bar-side social_icons">
+        <li class="padding-r-20">
+          <p class="font-lora">Phone: (01) 800 433 633</p>
+        </li>
+        <li>
+          <p class="font-lora">Mail: aarogyadaan01@gmail.com</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!--======= HEADER START =========-->
+  <header class="sticky">
+    <div class="container"> 
+      
+      <!--======= LOGO =========-->
+      <div class="logo"> <a href="#."><img src="asset-design/images/logo.png" alt="" ></a> </div>
+      
+      <!--======= DONATE NOW BTN =========-->
+      <div class="btn-right"> <a href="#make-donation" class="btn popup-with-zoom-anim"><i class="fa fa-user-times"></i>Logout</a> </div>
+    </div>
+
+    <!--======= NAVIGATION =========-->
+    <nav>
+      <div class="container">
+        
+      </div>
+    </nav>
+    
+  </header>
+  <!--======= HEADER END =========--> 
+  
+  
+  <!--======= CONTENT =========-->
+  <div class="content"> 
+    
+    <!--======= SHOP =========-->
+    <section class="shop shop-pages" style="padding: 0px;">
+      <div class="container"> 
+        
+        <!--======= PRODUCTS ROW =========-->
+        <div class="row"> 
+          
+          <!--======= SHOP LEFT BAR =========-->
+          <div class="col-md-3">
+            <div class="side-bar"> 
+              
+              <!--======= SEARCH =========-->
+              
+              <div class="shop-side-bar">
+                <h5><a ui-sref="dash"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></h5>
+                <ul class="cate"></ul>
+                <h5><b><a ui-sref="volunteer"><i class="fa fa-users"></i> Manage Volunteer</a></b></h5>
+                <ul class="cate"></ul>
+                <h5><a ui-sref="volunteer"><i class="fa fa-bell-o"></i> Manage Backer</a></h5>
+                <ul class="cate"></ul>
+                <h5><a ui-sref="volunteer"><i class="fa fa-heart"></i> Manage Patient</a></h5>
+                <ul class="cate"></ul>
+                <h5><a ui-sref="volunteer"><i class="fa fa-smile-o"></i> Manage NGO's</a></h5>
+                <ul class="cate"></ul>
+                <h5><a ui-sref="volunteer"><i class="fa fa-edit"></i> Manage Blog</a></h5>
+                <ul class="cate"></ul>
+              </div>
+            </div>
+          </div>
+          
+          <!--======= SHOP IMAGES =========-->
+          <div class="col-md-9">
+            <div class="row">
+            	<h3>Manage Volunteer</h3>
+            	<div class="btn-right"> <a href="#make-donation" class="btn "><i class="fa fa-user-times"></i>New Volunteer</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!--======= CONTENT END =========--> 
+  
+  <!--======= FOOTER =========-->
+  <footer>
+    <div class="container"> 
+      
+      <!--======= FOOTER ROW =========-->
+      <div class="row">
+        <div class="col-md-6"> 
+          
+          <!--======= FOOTER 1 =========-->
+          <ul class="row">
+            
+            <!--======= KEEP IN TOUCH =========-->
+            
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+    <br>
+    <!--======= RIGHTS =========-->
+  </footer>
+  
+</div>
+<script src="asset-design/js/jquery-1.11.0.min.js"></script> 
+<script src="asset-design/js/bootstrap.min.js"></script> 
+<script src="asset-design/js/own-menu.js"></script> 
+<script src="asset-design/js/jquery.flexslider.js"></script> 
+<script src="asset-design/js/counter.js"></script> 
+<script src="asset-design/js/owl.carousel.min.js"></script> 
+<script src="asset-design/js/waypoints.min.js"></script> 
+<script src="asset-design/js/jquery.isotope.min.js"></script> 
+<script src="asset-design/js/jquery.nouislider.min.js"></script> 
+<script src="asset-design/js/jquery.magnific-popup.min.js"></script> 
+<script src="asset-design/js/jquery.downCount.js"></script> 
+<script src="asset-design/js/main.js"></script> 
+<script>
+jQuery(document).ready(function($) {
+  
+  //  Price Filter ( noUiSlider Plugin)
+    $("#price-range").noUiSlider({
+    range: {
+      'min': [ 0 ],
+      'max': [ 100 ]
+    },
+    start: [20,50],
+        connect:true,
+        serialization:{
+            lower: [
+        $.Link({
+          target: $("#price-min")
+        })
+      ],
+      upper: [
+        $.Link({
+          target: $("#price-max")
+        })
+      ],
+      format: {
+      // Set formatting
+        decimals: 2,
+        prefix: '$'
+      }
+        }
+  })
+})
+
+</script>

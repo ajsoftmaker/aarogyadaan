@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+	<changeSet id="1" author="abhay">
+		<!-- _______________________ TENANTS _______________________ -->
+		<createTable tableName="tenants">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="tenant_name" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="tenant_city" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="tenant_dist" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="tenant_tal" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="tenant_phone" type="varchar(255)">
+			</column>
+			<column name="tenant_email" type="varchar(255)">
+			</column>
+			<column name="tenant_occupation" type="varchar(255)">
+			</column>
+			<column name="tenant_vision" type="varchar(255)">
+			</column>
+			<column name="tenant_status" type="varchar(255)">
+			<constraints nullable="false" />
+			</column>
+		</createTable>
+
+		<!-- _______________________ VOLUNTEERS _______________________ -->
+		<createTable tableName="volunteers">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="volunteer_name" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="volunteer_city" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="volunteer_dist" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="volunteer_tal" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="volunteer_phone" type="varchar(255)">
+			</column>
+			<column name="volunteer_email" type="varchar(255)">
+			</column>
+			<column name="volunteer_occupation" type="varchar(255)">
+			</column>
+			<column name="volunteer_vision" type="varchar(255)">
+			</column>
+			<column name="volunteer_status" type="varchar(255)">
+			<constraints nullable="false" />
+			</column>
+		</createTable>
+		
+		<!-- _______________________ BACKERS _______________________ -->
+		<createTable tableName="backers">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="backer_name" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="backer_city" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="backer_dist" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="backer_tal" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="backer_phone" type="varchar(255)">
+			</column>
+			<column name="backer_aadharno" type="varchar(255)">
+			</column>
+			<column name="backer_contribution" type="varchar(255)">
+			</column>
+			<column name="backer_email" type="varchar(255)">
+			</column>
+			<column name="backer_amount" type="varchar(255)">
+			</column>
+			<column name="backer_paymentmode" type="varchar(255)">
+			</column>
+			<column name="backer_vision" type="varchar(255)">
+			</column>
+			<column name="backer_preferences" type="varchar(255)">
+			</column>
+			<column name="backer_image" type="mediumblob">
+			</column>
+		</createTable>
+		
+		<!-- _______________________ PATIENTS _______________________ -->
+		<createTable tableName="patients">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="patient_name" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="patient_city" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="patient_dist" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="patient_tal" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="patient_phone" type="varchar(255)">
+			</column>
+			<column name="patient_aadharno" type="varchar(255)">
+			</column>
+			<column name="patient_disese" type="varchar(255)">
+			</column>
+			<column name="patient_email" type="varchar(255)">
+			</column>
+			<column name="patient_helptype" type="varchar(255)">
+			</column>
+			<column name="patient_accountno" type="varchar(255)">
+			</column>
+			<column name="patient_doctorinfo" type="varchar(255)">
+			</column>
+			<column name="patient_date" type="varchar(255)">
+			</column>
+		</createTable>
+		
+		<!-- _______________________ BLOGS _______________________ -->
+		<createTable tableName="blogs">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="blog_title" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="blog_date" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="blog_data" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="blog_writer" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+
+		<!-- _______________________ LABJUMPUSERS _______________________ -->
+		<!-- ~~~~~~~~~~~~ -->
+		<createTable tableName="loginusers">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="user_loginID" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="user_pwd" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="user_role" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="email" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="tenant_id" type="bigint">
+				<constraints nullable="false" />
+			</column>
+			<column name="status" type="varchar(255)">
+			<constraints nullable="false" />
+			</column>
+		</createTable>
+		<addForeignKeyConstraint baseColumnNames="tenant_id"
+			baseTableName="loginusers" constraintName="fk_loginusers_tenant_id"
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
+			referencedTableName="tenants" />
+	</changeSet>
+	
+</databaseChangeLog>
