@@ -587,7 +587,7 @@
     <h6>Register As volunteer</h6>
     <!--======= DONATE LIGHT BOX =========-->
     <div class="pop-inner">
-      <form>
+      <form name="addFormVolunteer">
         
         <!--======= CRADIT CARD INFO =========-->
         <ul class="row per-info">
@@ -595,23 +595,26 @@
             <label>give Your Information</label>
           </li>
           <li class="col-sm-12">
-            <input type="text" name="name" placeholder="Name">
+            <input class="form-control" tabindex="1" ng-change="validVolunteerName(addFormVolunteer.volunteerName.$invalid)" ng-model="volunteer.volunteerName" name="volunteerName" placeholder="Name" ng-pattern="/^[a-zA-Z0-9  ]*$/" required>
+                            <div ng-show="volunteerNameValid" style="color: red">Please Enter valid Name</div>
+                            <span ng-show="volunteerNameSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="volunteerNameError" class="glyphicon glyphicon-remove form-control-feedback"></span>
           </li>
           
           <li class="col-sm-6">
-            <input type="email" name="Email" placeholder="Email Address">
+            <input class="form-control" tabindex="2" ng-change="validCity(addFormVolunteer.volunteerCity.$invalid)" ng-model="volunteer.volunteerCity" name="volunteerCity" placeholder="City" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="volunteerCityValid" style="color: red">Please Enter valid City</div>
+                            <span ng-show="volunteerCitySuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="volunteerCityError" class="glyphicon glyphicon-remove form-control-feedback"></span>
           </li>
           <li class="col-sm-6">
-            <input type="text" name="phone" placeholder="phone">
+            <input class="form-control" tabindex="5" type="number" ng-change="validVolunteerPhone(addFormVolunteer.volunteerPhone.$invalid)" ng-model="volunteer.volunteerPhone" name="volunteerPhone" placeholder="Phone" ngMinlength="10" ngMaxlength="10"  ng-pattern="/^\d{10}$/" required>
+                            <div ng-show="volunteerPhoneValid" style="color: red">Please Enter valid Phone Number</div>
+                            <span ng-show="volunteerPhoneSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="volunteerPhoneError" class="glyphicon glyphicon-remove form-control-feedback"></span>
           </li>
           <li class="col-sm-6">
-            <input type="text" name="phone" placeholder="Occupation">
-          </li>
-          
-          <li class="col-sm-12">
-            <textarea placeholder="Address" style="height:75px"></textarea>
-          </li>
-          <li class="col-sm-6">
+          	
           	<select class="form-control" style="margin-top: 12px;" ng-model="volDist" ng-options="District.id as District.name for District in Districts">
         			<option value="">Select</option>
     			</select>
@@ -621,14 +624,34 @@
         			<option value="">Select</option>
     			</select>
           </li>
-          <li class="col-sm-12">
-            <textarea placeholder="Vision"></textarea>
+          
+          
+          <li class="col-sm-6">
+          	<input class="form-control" tabindex="6" ng-disabled="editMode" ng-change="validVolunteerEmail(addFormVolunteer.volunteerEmail.$invalid)" ng-model="volunteer.volunteerEmail" name="volunteerEmail" placeholder="Email" ng-maxlength="50" ng-minlength="7" ng-pattern="/^[a-z]+[a-z0-9._+]+@[a-z]+\.[a-z.]{2,5}$/"  required>
+                            <div ng-show="volunteerEmailValid" style="color: red">Please Enter valid Email ID</div>
+                            <span ng-show="volunteerEmailSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="volunteerEmailError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          <li class="col-sm-6">
+          	<input class="form-control" tabindex="8" ng-change="validVolunteerOccupation(addFormVolunteer.volunteerOccupation.$invalid)" ng-model="volunteer.volunteerOccupation" name="volunteerOccupation" placeholder="Occupation" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <div ng-show="volunteerOccupationValid" style="color: red">Please Enter valid Occupation</div>
+                            <span ng-show="volunteerOccupationSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="volunteerOccupationError" class="glyphicon glyphicon-remove form-control-feedback"></span>
           </li>
           <li class="col-sm-12">
+            <textarea class="form-control" rows="7" autocomplete="off" tabindex="6" ng-change="validVolunteerVision(addFormVolunteer.volunteerVision.$invalid)" ng-model="volunteer.volunteerVision" name="volunteerVision" placeholder="Vision" ng-pattern="/^[a-zA-Z  ]*$/" required/>
+                            <div ng-show="volunteerVisionValid" style="color: red">Please Enter valid Occupation</div>
+                            <span ng-show="volunteerVisionSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="volunteerVisionError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </li>
+          <!-- <li class="col-sm-12">
           	<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+          </li> -->
+          <li class="col-sm-12">
+          	<div class="row text-center" ng-hide="addFormVolunteer.$valid" style="color: red">Enter all fields are mandatory</div>
           </li>
           <li class="col-sm-12">
-            <button type="submit" class="btn">SUBMIT DETAILS</button>
+            <button type="submit" class="btn" tabindex="9" ng-disabled="addFormVolunteer.$invalid" ng-click="addVolunteer()">SUBMIT DETAILS</button>
           </li>
         </ul>
       </form>
@@ -751,7 +774,6 @@
 			
 			<div ng-show="backer.backerPreferences=='District'" ng-click="myData()" ng-dropdown-multiselect="" options="Districts" selected-model="example14model" extra-settings="example14settings">
 			</div>
-			-->{{sData}}
             
           </li>
           <li class="col-sm-12">
@@ -777,7 +799,7 @@
     <h6>Register As Patient</h6>
     <!--======= DONATE LIGHT BOX =========-->
     <div class="pop-inner">
-    <form>
+    <form name="addFormPatient">
     	<ul class="row per-info">
     		<ul class="col-sm-6">
     			<ul class="row">
@@ -799,7 +821,7 @@
           			</li>
 					<li class="col-sm-12">
 						<div class="form-group {{patientNameFeedback}}">
-							<input type="text" placeholder="Name" tabindex="1" ng-change="validPatientName(addForm.patientName.$invalid)" ng-model="patient.patientName" name="patientName" ng-pattern="/^[a-zA-Z0-9  ]*$/" required>
+							<input type="text" placeholder="Name" tabindex="1" ng-change="validPatientName(addFormPatient.patientName.$invalid)" ng-model="patient.patientName" name="patientName" ng-pattern="/^[a-zA-Z0-9  ]*$/" required>
 							<div ng-show="patientNameValid" style="color: red">Please Enter valid Name</div>
 							<span ng-show="patientNameSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
 							<span ng-show="patientNameError" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -808,7 +830,7 @@
 					
 					<li class="col-sm-6">
 						<div class="form-group {{patientCityFeedback}}">
-							<input type="text" placeholder="City" tabindex="2" ng-change="validPatientCity(addForm.patientCity.$invalid)" ng-model="patient.patientCity" name="patientCity" ng-pattern="/^[a-zA-Z  ]*$/" required>
+							<input type="text" placeholder="City" tabindex="2" ng-change="validPatientCity(addFormPatient.patientCity.$invalid)" ng-model="patient.patientCity" name="patientCity" ng-pattern="/^[a-zA-Z  ]*$/" required>
 							<div ng-show="patientCityValid" style="color: red">Please Enter valid City</div>
 							<span ng-show="patientCitySuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
 							<span ng-show="patientCityError" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -817,7 +839,7 @@
 
 					<li class="col-sm-6">
 						<div class="form-group {{patientPhoneFeedback}}">
-							<input type="text" placeholder="Phone" tabindex="5" type="number" ng-change="validPatientPhone(addForm.patientPhone.$invalid)" ng-model="patient.patientPhone" name="patientPhone" ngMinlength="10" ngMaxlength="10" placeholder="eg :(XXXXXXXXXX) 10 digits  " ng-pattern="/^\d{10}$/" required>
+							<input type="text" placeholder="Phone" tabindex="5" type="number" ng-change="validPatientPhone(addFormPatient.patientPhone.$invalid)" ng-model="patient.patientPhone" name="patientPhone" ngMinlength="10" ngMaxlength="10" placeholder="eg :(XXXXXXXXXX) 10 digits  " ng-pattern="/^\d{10}$/" required>
 							<div ng-show="patientPhoneValid" style="color: red">Please Enter valid Phone Number</div>
 							<span ng-show="patientPhoneSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
 							<span ng-show="patientPhoneError" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -844,7 +866,7 @@
       
 					<li class="col-sm-6">
 						<div class="form-group {{patientEmailFeedback}}">
-							<input type="email" placeholder="Email Address" tabindex="7" ng-disabled="editMode" ng-change="validPatientEmail(addForm.patientEmail.$invalid)" ng-model="patient.patientEmail" name="patientEmail" ng-maxlength="50" ng-minlength="7" ng-pattern="/^[a-z]+[a-z0-9._+]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="eg :(aaa@aa.aaa)" required>
+							<input type="email" placeholder="Email Address" tabindex="7" ng-disabled="editMode" ng-change="validPatientEmail(addFormPatient.patientEmail.$invalid)" ng-model="patient.patientEmail" name="patientEmail" ng-maxlength="50" ng-minlength="7" ng-pattern="/^[a-z]+[a-z0-9._+]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="eg :(aaa@aa.aaa)" required>
 							<div ng-show="patientEmailValid" style="color: red">Please Enter valid Email ID</div>
 							<span ng-show="patientEmailSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
 							<span ng-show="patientEmailError" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -853,7 +875,7 @@
 
 					<li class="col-sm-6">
 						<div class="form-group {{patientAadharnoFeedback}}">
-							<input type="text" placeholder="Aadhar No" tabindex="6" type="number" ng-change="validPatientAadharNo(addForm.patientAadharno.$invalid)" ng-model="patient.patientAadharno" name="patientAadharno" placeholder="eg :(XXXXXXXXXXXX) 12 digits  "  required>
+							<input type="text" placeholder="Aadhar No" tabindex="6" type="number" ng-change="validPatientAadharNo(addFormPatient.patientAadharno.$invalid)" ng-model="patient.patientAadharno" name="patientAadharno" placeholder="eg :(XXXXXXXXXXXX) 12 digits  "  required>
 							<div ng-show="patientAadharnoValid" style="color: red">Please Enter valid Aadhar Number</div>
 							<span ng-show="patientAadharnoSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
 							<span ng-show="patientAadharnoError" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -862,7 +884,7 @@
 
 					<li class="col-sm-6">
 						<div class="form-group {{patientDiseseFeedback}}">
-							<input type="text" placeholder="Nature of disease" tabindex="8" ng-change="validPatientDisese(addForm.patientDisese.$invalid)" ng-model="patient.patientDisese" name="patientDisese" ng-pattern="/^[a-zA-Z  ]*$/" required>
+							<input type="text" placeholder="Nature of disease" tabindex="8" ng-change="validPatientDisese(addFormPatient.patientDisese.$invalid)" ng-model="patient.patientDisese" name="patientDisese" ng-pattern="/^[a-zA-Z  ]*$/" required>
 							<div ng-show="patientDiseseValid" style="color: red">Please Enter valid Nature Of Disese</div>
 							<span ng-show="patientDiseseSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
 							<span ng-show="patientDiseseError" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -871,7 +893,7 @@
 					
 					<li class="col-sm-6">
 						<div class="form-group {{patientHelptypeFeedback}}">
-							<input type="text" placeholder="Help needed in Financial/Things (objects)/Services" tabindex="9" ng-change="validPatientHelptype(addForm.paymentMode.$invalid)" ng-model="patient.patientHelptype" name="patientHelptype" ng-pattern="/^[a-zA-Z  ]*$/" required>
+							<input type="text" placeholder="Help needed in Financial/Things (objects)/Services" tabindex="9" ng-change="validPatientHelptype(addFormPatient.paymentMode.$invalid)" ng-model="patient.patientHelptype" name="patientHelptype" ng-pattern="/^[a-zA-Z  ]*$/" required>
 							<div ng-show="patientHelptypeValid" style="color: red">Please Enter valid Helptype</div>
 							<span ng-show="patientHelptypeSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
 							<span ng-show="patientHelptypeError" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -880,27 +902,27 @@
 
 					<li class="col-sm-6">
 						<div class="form-group {{patientAccountnoFeedback}}">
-							<input type="text" placeholder="Enter Your Bank Account Number" tabindex="10" type="number" ng-change="validPatientAccountno(addForm.patientAccountno.$invalid)" ng-model="patient.patientAccountno" name="patientAccountno" ngMinlength="10" ngMaxlength="12" placeholder="  " required>
+							<input type="text" placeholder="Enter Your Bank Account Number" tabindex="10" type="number" ng-change="validPatientAccountno(addFormPatient.patientAccountno.$invalid)" ng-model="patient.patientAccountno" name="patientAccountno" ngMinlength="10" ngMaxlength="12" placeholder="  " required>
 							<div ng-show="patientAccountnoValid" style="color: red">Please Enter valid Accountno</div>
 							<span ng-show="patientAccountnoSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
 							<span ng-show="patientAccountnoError" class="glyphicon glyphicon-remove form-control-feedback"></span>
 						</div>
 					</li>
-					
+					<!-- 
 					<li class="col-sm-12">
           				<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
-          			</li>
+          			</li> -->
 
 					<li class="col-sm-12">
 						<div class="form-group {{patientDoctorinfoFeedback}}">
-							<textarea placeholder="Doctor’s/ Hospital’s information" rows="5" autocomplete="off" tabindex="11" ng-change="validPatientDoctorinfo(addForm.patientDoctorinfo.$invalid)" ng-model="patient.patientDoctorinfo" name="patientDoctorinfo" ng-pattern="/^[a-zA-Z  ]*$/" required/>
+							<textarea placeholder="Doctor’s/ Hospital’s information" rows="5" autocomplete="off" tabindex="11" ng-change="validPatientDoctorinfo(addFormPatient.patientDoctorinfo.$invalid)" ng-model="patient.patientDoctorinfo" name="patientDoctorinfo" ng-pattern="/^[a-zA-Z  ]*$/" required/>
 							<div ng-show="patientDoctorinfoValid" style="color: red">Please Enter valid Occupation</div>
 							<span ng-show="patientDoctorinfoSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
 							<span ng-show="patientDoctorinfoError" class="glyphicon glyphicon-remove form-control-feedback"></span>
 						</div>
 					</li>
 					<li class="col-sm-12">
-						<button type="submit" class="btn"  tabindex="12" ng-disabled="addForm.$invalid" ng-click="addPatient()">SUBMIT DETAILS</button>
+						<button type="submit" class="btn"  tabindex="12" ng-disabled="addFormPatient.$invalid" ng-click="addPatient()">SUBMIT DETAILS</button>
 					</li>
     			</ul>
     		</ul>

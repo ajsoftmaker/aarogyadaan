@@ -21,10 +21,10 @@ function saaddvolunteerController($scope,$rootScope,$state,dialogs,restAPIServic
 	$scope.volunteerNameError = false;
 	$scope.volunteerNameFeedback = "";
 	
-	$scope.volunteerAddressValid = false;
-	$scope.volunteerAddressSuccess = false;
-	$scope.volunteerAddressError = false;
-	$scope.volunteerAddressFeedback = "";
+//	$scope.volunteerAddressValid = false;
+//	$scope.volunteerAddressSuccess = false;
+//	$scope.volunteerAddressError = false;
+//	$scope.volunteerAddressFeedback = "";
 	
 	$scope.volunteerPhoneValid = false;
 	$scope.volunteerPhoneSuccess = false;

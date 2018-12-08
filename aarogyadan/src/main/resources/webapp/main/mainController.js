@@ -13,8 +13,6 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	$scope.example14settings = { scrollableHeight: '200px', scrollable: true,smartButtonMaxItems: 3, smartButtonTextConverter: function(itemText, originalItem) { return itemText; }};
 	$scope.example14model = [];
 	
-	
-	
 	 $scope.Districts =[
 {
     id: 1, name: "Kolhapur", label: "Kolhapur",
@@ -780,19 +778,7 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	$scope.patientDiseseFeedback = "";
 	
 	$scope.addPatient = function() {
-		if($scope.mode=="edit"){
-			var promise = restAPIService.patientService($scope.patient.id).update($scope.patient);
-			promise.$promise.then(
-					function (response) {
-						dialogs.notify("Success", response.success, {'size': 'sm' });
-						$state.reload();
-				    },
-				    function(error){
-				    	dialogs.error("Error", error.data.error, {'size': 'sm' });
-				    }
-				);
-		}else{
-//			$scope.patient
+		
 			$scope.patient.patientPhone = "" + $scope.patient.patientPhone;
 			$scope.patient.patientAadharno = "" + $scope.patient.patientAadharno;
 			$scope.patient.patientAccountno = "" + $scope.patient.patientAccountno;
@@ -806,7 +792,7 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 						dialogs.error("Error", error.data.error, {'size': 'sm' });
 					}
 			);
-		}
+		
 	}
 	
 	$scope.cancelAddPatient = function() {
@@ -925,17 +911,17 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	$scope.validPatientAadharNo = function(valid){
 		$scope.patientAadharnoValid = valid;
 		if($scope.patient.patientAadharno != undefined) {
-			var phoneNo = ""+$scope.patient.patientAadharno;
-			if(phoneNo.length == 12 ) {
+			var patientAadharno = ""+$scope.patient.patientAadharno;
+			if($scope.patient.patientAadharno > 99999999999 ) {
 				$scope.patientAadharnoSuccess = true;
 				$scope.patientAadharnoError = false;
 				$scope.patientAadharnoFeedback = "has-success has-feedback";
-				$scope.patientAadharnoValid = true;
+				$scope.patientAadharnoValid = false;
 			} else {
 				$scope.patientAadharnoSuccess = false;
 				$scope.patientAadharnoError = true;
 				$scope.patientAadharnoFeedback = "has-error has-feedback";
-				$scope.patientAadharnoValid = false;
+				$scope.patientAadharnoValid = true;
 			}
 		} else {
 			$scope.patientAadharnoError = true;
@@ -1093,6 +1079,218 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 			}
 //				$scope.sData=$scope.sData+","+$scope.example14data[$scope.example14model[($scope.example14model.length)-1].id-1].label;
 			
+		}
+	}
+	
+	$scope.volunteer={
+			volunteerName : "",
+			volunteerPhone : "",
+			volunteerEmail : "",
+			volunteerOccupation : "",
+			volunteerVision : "",
+			volunteerStatus : "",
+			volunteerDist : "",
+			volunteerTal : "",
+			volunteerCity : ""
+			}
+	
+	$scope.volunteerNameValid = false;
+	$scope.volunteerNameSuccess = false;
+	$scope.volunteerNameError = false;
+	$scope.volunteerNameFeedback = "";
+	
+	$scope.volunteerPhoneValid = false;
+	$scope.volunteerPhoneSuccess = false;
+	$scope.volunteerPhoneError = false;
+	$scope.volunteerPhoneFeedback = "";
+	
+	$scope.volunteerEmailValid = false;
+	$scope.volunteerEmailSuccess = false;
+	$scope.volunteerEmailError = false;
+	$scope.volunteerEmailFeedback = "";
+	
+	$scope.volunteerOccupationValid = false;
+	$scope.volunteerOccupationSuccess = false;
+	$scope.volunteerOccupationError = false;
+	$scope.volunteerOccupationFeedback = "";
+	
+	$scope.volunteerVisionValid = false;
+	$scope.volunteerVisionSuccess = false;
+	$scope.volunteerVisionError = false;
+	$scope.volunteerVisionFeedback = "";
+	
+	$scope.volunteerCityValid = false;
+	$scope.volunteerCitySuccess = false;
+	$scope.volunteerCityError = false;
+	$scope.volunteerCityFeedback = "";
+	
+	$scope.volunteerDistValid = true;
+	$scope.volunteerDistSuccess = true;
+	$scope.volunteerDistError = false;
+	$scope.volunteerDistFeedback = "has-success has-feedback";
+	
+	$scope.volunteerTalValid = true;
+	$scope.volunteerTalSuccess = true;
+	$scope.volunteerTalError = false;
+	$scope.volunteerTalFeedback = "has-success has-feedback";
+	
+	$scope.addVolunteer = function() {
+		
+			var promise = restAPIService.volunteersService().save(null,$scope.volunteer);
+			promise.$promise.then(
+					function (response) {
+						dialogs.notify("Success", response.success, {'size': 'sm' });
+						$state.reload();
+					},
+					function (error) {
+						dialogs.error("Error", error.data.error, {'size': 'sm' });
+					}
+			);
+		
+	}
+	
+	$scope.cancelAddVolunteer = function() {
+		$state.reload();
+	}
+
+	$scope.validVolunteerName = function(valid){
+		$scope.volunteerNameValid = valid;
+		if($scope.volunteer.volunteerName != undefined) {
+			if($scope.volunteer.volunteerName.length <= 0) {
+				$scope.volunteerNameError = true;
+				$scope.volunteerNameFeedback = "has-error has-feedback";
+			} else {
+				$scope.volunteerNameSuccess = true;
+				$scope.volunteerNameError = false;
+				$scope.volunteerNameFeedback = "has-success has-feedback";
+			}
+		} else {
+			$scope.volunteerNameError = true;
+			$scope.volunteerNameSuccess = false;
+			$scope.volunteerNameFeedback = "has-error has-feedback"; 
+		}
+	}
+	
+	$scope.validVolunteerPhone = function(valid){
+		$scope.volunteerPhoneValid = valid;
+		if($scope.volunteer.volunteerPhone != undefined) {
+			var phoneNo = ""+$scope.volunteer.volunteerPhone;
+			if(phoneNo.length != 10 ) {
+				$scope.volunteerPhoneSuccess = false;
+				$scope.volunteerPhoneError = true;
+				$scope.volunteerPhoneFeedback = "has-error has-feedback";
+				
+			} else {
+				$scope.volunteerPhoneSuccess = true;
+				$scope.volunteerPhoneError = false;
+				$scope.volunteerPhoneFeedback = "has-success has-feedback";
+				
+			}
+		} else {
+			$scope.volunteerPhoneError = true;
+			$scope.volunteerPhoneSuccess = false;
+			$scope.volunteerPhoneFeedback = "has-error has-feedback"; 
+		}
+	}
+	
+	$scope.validVolunteerEmail = function(valid){
+		$scope.volunteerEmailValid = valid;
+		if(valid == true) {
+			$scope.volunteerEmailSuccess = false;
+			$scope.volunteerEmailError = true;
+			$scope.volunteerEmailFeedback = "has-error has-feedback";
+		} else {
+			$scope.volunteerEmailError = false;
+			$scope.volunteerEmailSuccess = true;
+			$scope.volunteerEmailFeedback = "has-success has-feedback";
+		}
+	}
+	
+	$scope.validVolunteerOccupation = function(valid){
+		if($scope.volunteer.volunteerOccupation.length == 0) {
+			$scope.volunteerOccupationSuccess = false;
+			$scope.volunteerOccupationError = false;
+			$scope.volunteerOccupationFeedback = "";
+		} else {
+			$scope.volunteerOccupationSuccess = true;
+			$scope.volunteerOccupationError = false;
+			$scope.volunteerOccupationFeedback = "has-success has-feedback";
+		}
+	}
+	
+	$scope.validVolunteerVision = function(valid){
+		$scope.volunteerVisionValid = valid;
+		if($scope.volunteer.volunteerVision != undefined) {
+			if($scope.volunteer.volunteerVision.length <= 0) {
+				$scope.volunteerVisionSuccess = false;
+				$scope.volunteerVisionError = true;
+				$scope.volunteerVisionFeedback = "has-error has-feedback";
+			} else {
+				$scope.volunteerVisionSuccess = true;
+				$scope.volunteerVisionError = false;
+				$scope.volunteerVisionFeedback = "has-success has-feedback";
+			}
+		} else {
+			$scope.volunteerVisionError = true;
+			$scope.volunteerVisionSuccess = false;
+			$scope.volunteerVisionFeedback = "has-error has-feedback"; 
+		}
+	}
+	
+	$scope.validCity = function(valid){
+		$scope.volunteerCityValid = valid;
+		if($scope.volunteer.volunteerCity != undefined) {
+			if($scope.volunteer.volunteerCity.length <= 0) {
+				$scope.volunteerCitySuccess = false;
+				$scope.volunteerCityError = true;
+				$scope.volunteerCityFeedback = "has-error has-feedback";
+			} else {
+				$scope.volunteerCitySuccess = true;
+				$scope.volunteerCityError = false;
+				$scope.volunteerCityFeedback = "has-success has-feedback";
+			}
+		} else {
+			$scope.volunteerCityError = true;
+			$scope.volunteerCitySuccess = false;
+			$scope.volunteerCityFeedback = "has-error has-feedback"; 
+		}
+	}
+	
+	$scope.validDist = function(valid){
+		$scope.volunteerDistValid = valid;
+		if($scope.volunteer.volunteerDist != undefined) {
+			if($scope.volunteer.volunteerDist.length <= 0) {
+				$scope.volunteerDistSuccess = false;
+				$scope.volunteerDistError = true;
+				$scope.volunteerDistFeedback = "has-error has-feedback";
+			} else {
+				$scope.volunteerDistSuccess = true;
+				$scope.volunteerDistError = false;
+				$scope.volunteerDistFeedback = "has-success has-feedback";
+			}
+		} else {
+			$scope.volunteerDistError = true;
+			$scope.volunteerDistSuccess = false;
+			$scope.volunteerDistFeedback = "has-error has-feedback"; 
+		}
+	}
+	
+	$scope.validTal = function(valid){
+		$scope.volunteerTalValid = valid;
+		if($scope.volunteer.volunteerTal != undefined) {
+			if($scope.volunteer.volunteerTal.length <= 0) {
+				$scope.volunteerTalSuccess = false;
+				$scope.volunteerTalError = true;
+				$scope.volunteerTalFeedback = "has-error has-feedback";
+			} else {
+				$scope.volunteerTalSuccess = true;
+				$scope.volunteerTalError = false;
+				$scope.volunteerTalFeedback = "has-success has-feedback";
+			}
+		} else {
+			$scope.volunteerTalError = true;
+			$scope.volunteerTalSuccess = false;
+			$scope.volunteerTalFeedback = "has-error has-feedback"; 
 		}
 	}
 	

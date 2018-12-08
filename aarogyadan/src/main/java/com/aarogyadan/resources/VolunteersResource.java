@@ -50,7 +50,7 @@ public class VolunteersResource {
 
 	@POST
 	@UnitOfWork
-	public Response createVolunteer(@Auth LoginUser auth, Volunteer volunteer) {
+	public Response createVolunteer(Volunteer volunteer) {
 		Response response = null;
 		try {
 			logger.info(" In create Volunteer");
