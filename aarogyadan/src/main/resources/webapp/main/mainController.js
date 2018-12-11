@@ -426,25 +426,25 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	
 	
 	$scope.addBacker = function() {
-//			var fd = new FormData();
+			var fd = new FormData();
 			$scope.backer.backerPhone = "" + $scope.backer.backerPhone;
 			$scope.backer.backerAadharNo = "" + $scope.backer.backerAadharNo;
 			$scope.backer.backerAmount = "" + $scope.backer.backerAmount;
-//			var fileReference = document.getElementById('logofile').files[0];
+			var fileReference = document.getElementById('logofile').files[0];
 //			if (fileReference.size > 30720) {
 //				dialogs.error("Error","Please select an image with size less than 30 KB", {'size' : 'sm'});
 //				return;
 //			}
-//			if (fileReference.type.indexOf('image') < 0) {
-//				
-//			} else {
-//				
-//				$scope.backer.imageBacker = fileReference;
-//				fd.append('imageBacker', fileReference);
+			if (fileReference.type.indexOf('image') < 0) {
+				
+			} else {
+				
+				$scope.backer.imageBacker = fileReference;
+				fd.append('imageBacker', fileReference);
 				
 				
-//			}
-			var promise = restAPIService.backersService().save(null,$scope.backer);
+			}
+			var promise = restAPIService.backersCreateService().save($scope.backer,fd);
 			promise.$promise.then(
 					function (response) {
 						dialogs.notify("Success", response.success, {'size': 'sm' });
@@ -653,7 +653,7 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 		}
 	}
 	
-	$scope.validCity = function(valid){
+	$scope.validBackerCity = function(valid){
 		$scope.backerCityValid = valid;
 		if($scope.backer.backerCity != undefined) {
 			if($scope.backer.backerCity.length <= 0) {

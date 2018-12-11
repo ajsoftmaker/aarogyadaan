@@ -14,6 +14,7 @@ function restAPIService($resource, $rootScope, $http) {
 		volunteerService : volunteerService,
 		backersService : backersService,
 		backerService : backerService,
+		backersCreateService : backersCreateService,
 		
 		patientsService : patientsService,
 		blogsService : blogsService,
@@ -459,6 +460,39 @@ function restAPIService($resource, $rootScope, $http) {
 	function backersService() {
 		var url = $rootScope.apiUrl + "backers";
 		return $resource(url);
+	}
+	
+	function backersCreateService() {
+		var url = $rootScope.apiUrl + "backers";
+		return $resource(url,backer,{
+			'save' : {
+				method : 'POST',
+				transformRequest :function(data) {
+				    if (data === undefined)
+				        return data;
+				      var fd = new FormData();
+				      angular.forEach(data, function(value, key) {
+				        if (value instanceof FileList) {
+				          if (value.length == 1) {
+				            fd.append(key, value[0]);
+				          } else {
+				            angular.forEach(value, function(file, index) {
+				              fd.append(key + '_' + index, file);
+				            });
+				          }
+				        } else {
+				          fd.append(key, value);
+				        }
+				      });
+
+				      return fd;
+				    },
+				headers : {
+					'Content-Type' : undefined,
+					enctype : 'multipart/form-data'
+				}
+			}
+		});
 	}
 	
 	function backerService(id) {

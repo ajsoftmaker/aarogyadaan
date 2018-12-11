@@ -2,6 +2,7 @@ package com.aarogyadan;
 
 import java.util.Map;
 
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 
 import com.aarogyadan.auth.AarogyadanAuthenticator;
@@ -156,6 +157,8 @@ public class AarogyadanWebApplication extends Application<AarogyadanWebConfigura
 		
 		final AarogyadanUsersResource labJumpUserResource = new AarogyadanUsersResource(ljuserDAO, tenantDAO);
 		environment.jersey().register(labJumpUserResource);
+		
+		environment.jersey().register(MultiPartFeature.class);
 		
 	}
 }

@@ -46,15 +46,21 @@ public class BackersResource {
 	}
 
 	@POST
-//	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@UnitOfWork
-//	@Produces(MediaType.APPLICATION_JSON)
-	public Response createBacker(Backer backer) {
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response createBacker(Backer backer,@FormDataParam("logofile") InputStream is,
+			@FormDataParam("logofile") FormDataContentDisposition fileDetail) {
 		Response response = null;
 		try {
+//			Backer backer = new Backer();
 			logger.info(" In create Backer");
 			Backer backerObject = backerDAO.findByEmail(backer.getBackerEmail());
 			if (backerObject == null) {
+				if (fileDetail.getFileName() != null) {
+					byte[] imageByteValue = IOUtils.toByteArray(is);
+					backer.setBackerImage(imageByteValue);
+				}
 				response = backerDAO.create(backer);
 				return Response.status(Status.OK).entity(JsonUtils.getSuccessJson("Backer Created Successfully")).build();
 			} else {
