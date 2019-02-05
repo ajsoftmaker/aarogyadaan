@@ -69,7 +69,7 @@
                         <div class="form-group {{volunteerVisionFeedback}}">
                             <label>Vision</label>
                             <label style="color: red">&nbsp*</label>
-                            <textarea class="form-control" rows="7" autocomplete="off" tabindex="6" ng-change="validVolunteerVision(addForm.volunteerVision.$invalid)" ng-model="volunteer.volunteerVision" name="volunteerVision" ng-pattern="/^[a-zA-Z  ]*$/" required/>
+                            <textarea class="form-control" rows="7" autocomplete="off" tabindex="6" ng-change="validVolunteerVision(addForm.volunteerVision.$invalid)" ng-model="volunteer.volunteerVision" name="volunteerVision" ng-pattern="/^[a-zA-Z,.!&  ]*$/" required/>
                             <div ng-show="volunteerVisionValid" style="color: red">Please Enter valid Occupation</div>
                             <span ng-show="volunteerVisionSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
                             <span ng-show="volunteerVisionError" class="glyphicon glyphicon-remove form-control-feedback"></span>

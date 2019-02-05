@@ -64,7 +64,7 @@ public class PatientsResource {
 
 	@POST
 	@UnitOfWork
-	public Response createPatient(@Auth LoginUser auth, Patient patient) {
+	public Response createPatient(Patient patient) {
 		Response response = null;
 		try {
 			logger.info(" In create Patient");

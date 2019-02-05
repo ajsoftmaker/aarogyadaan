@@ -362,7 +362,13 @@ function allbackerController ($http, $rootScope, $scope, $state, restAPIService,
 	
 	$scope.pref=["All","District","Disease"];
 	
-	$scope.disease=["All","Cancer","Heart Disease","Brain Surgery","Accident"];
+	$scope.contribution = ["Financial","Things(objects)","Services"];
+	$scope.payment = ["cash","Cheque","Demand draft","ECS"];
+	
+	$scope.disease=["All Diseases","Cancer","Heart Disease","Brain Surgery","Accident"];
+	$scope.diseasePreferences = $scope.disease[0];
+	$scope.patient.patientDisese = $scope.disease[0];
+	
 	
 	$scope.backerNameValid = false;
 	$scope.backerNameSuccess = false;
@@ -430,7 +436,14 @@ function allbackerController ($http, $rootScope, $scope, $state, restAPIService,
 			$scope.backer.backerPhone = "" + $scope.backer.backerPhone;
 			$scope.backer.backerAadharNo = "" + $scope.backer.backerAadharNo;
 			$scope.backer.backerAmount = "" + $scope.backer.backerAmount;
-//			var fileReference = document.getElementById('logofile').files[0];
+			$scope.dist = $scope.Districts[$scope.backer.backerDist-1].name;  
+			$scope.tal = $scope.Districts[$scope.backer.backerDist-1].Talukas[$scope.backer.backerTal-1].dep; 
+			$scope.backer.backerDist = $scope.dist
+			$scope.backer.backerTal = $scope.tal
+			
+			
+			
+//			var fileReference = document.getElementById('imageBacker').files[0];
 //			if (fileReference.size > 30720) {
 //				dialogs.error("Error","Please select an image with size less than 30 KB", {'size' : 'sm'});
 //				return;
@@ -439,11 +452,14 @@ function allbackerController ($http, $rootScope, $scope, $state, restAPIService,
 //				
 //			} else {
 //				
-//				$scope.backer.imageBacker = fileReference;
+////				$scope.backer.imageBacker = fileReference;
 //				fd.append('imageBacker', fileReference);
-				
-				
+//				console.log(fd)
+//				console.log($scope.backer)
+//				
 //			}
+			
+			
 			var promise = restAPIService.backersService().save(null,$scope.backer);
 			promise.$promise.then(
 					function (response) {
@@ -456,11 +472,11 @@ function allbackerController ($http, $rootScope, $scope, $state, restAPIService,
 								backerPhone : "",
 								backerAadharNo : "",
 								backerEmail : "",
-								backerContribution : "",
 								backerPaymentMode : "",
 								backerAmount : "",
 								backerVision : ""
 								}
+						$scope.diseasePreferences = $scope.disease[0];
 					},
 					function (error) {
 						dialogs.error("Error", error.data.error, {'size': 'sm' });
@@ -653,7 +669,7 @@ function allbackerController ($http, $rootScope, $scope, $state, restAPIService,
 		}
 	}
 	
-	$scope.validCity = function(valid){
+	$scope.validBackerCity = function(valid){
 		$scope.backerCityValid = valid;
 		if($scope.backer.backerCity != undefined) {
 			if($scope.backer.backerCity.length <= 0) {
@@ -782,10 +798,31 @@ function allbackerController ($http, $rootScope, $scope, $state, restAPIService,
 			$scope.patient.patientPhone = "" + $scope.patient.patientPhone;
 			$scope.patient.patientAadharno = "" + $scope.patient.patientAadharno;
 			$scope.patient.patientAccountno = "" + $scope.patient.patientAccountno;
+			
+			$scope.dist = $scope.Districts[$scope.patient.patientDist-1].name;  
+			$scope.tal = $scope.Districts[$scope.patient.patientDist-1].Talukas[$scope.patient.patientTal-1].dep; 
+			$scope.patient.patientDist = $scope.dist
+			$scope.patient.patientTal = $scope.tal
+			
 			var promise = restAPIService.patientsService().save(null,$scope.patient);
 			promise.$promise.then(
 					function (response) {
 						dialogs.notify("Success", response.success, {'size': 'sm' });
+						$scope.patient={
+								patientName : "",
+								patientCity : "",
+								patientTal : "",
+								patientDist : "",
+								patientPhone : "",
+								patientAadharno : "",
+								patientEmail : "",
+								patientHelptype : "",
+								patientAccountno : "",
+								patientIFSC : "",
+								patientDoctorinfo : "",
+								patientDate : ""
+								}
+			        	$scope.patient.patientDisese = $scope.disease[0];
 						$state.reload();
 					},
 					function (error) {
@@ -940,19 +977,33 @@ function allbackerController ($http, $rootScope, $scope, $state, restAPIService,
 		$scope.patientAccountnoValid = valid;
 		if($scope.patient.patientAccountno != undefined) {
 			var amount = ""+$scope.patient.patientAccountno;
-			if(amount.length<13 && amount.length>9) {
+			
 				$scope.patientAccountnoSuccess = true;
 				$scope.patientAccountnoError = false;
 				$scope.patientAccountnoFeedback = "has-success has-feedback";
-			} else {
-				$scope.patientAccountnoSuccess = false;
-				$scope.patientAccountnoError = true;
-				$scope.patientAccountnoFeedback = "has-error has-feedback";
-			}
+			
 		} else {
 			$scope.patientAccountnoError = true;
 			$scope.patientAccountnoSuccess = false;
 			$scope.patientAccountnoFeedback = "has-error has-feedback"; 
+		}
+	}
+	
+	$scope.patientIFSCValid = false;
+	$scope.patientIFSCSuccess = false;
+	$scope.patientIFSCError = false;
+	$scope.patientIFSCFeedback = "";
+	
+	$scope.validPatientIFSC = function(valid){
+		$scope.patientIFSCValid = valid;
+		if($scope.patient.patientIFSC != undefined) {
+				$scope.patientIFSCSuccess = true;
+				$scope.patientIFSCError = false;
+				$scope.patientIFSCFeedback = "has-success has-feedback";
+		} else {
+			$scope.patientIFSCError = true;
+			$scope.patientIFSCSuccess = false;
+			$scope.patientIFSCFeedback = "has-error has-feedback"; 
 		}
 	}
 	
@@ -1136,10 +1187,26 @@ function allbackerController ($http, $rootScope, $scope, $state, restAPIService,
 	
 	$scope.addVolunteer = function() {
 		
+		$scope.dist = $scope.Districts[$scope.volDist-1].name;  
+		$scope.tal = $scope.Districts[$scope.volDist-1].Talukas[$scope.volTal-1].dep; 
+		$scope.volunteer.volunteerDist = $scope.dist
+		$scope.volunteer.volunteerTal = $scope.tal
+		
 			var promise = restAPIService.volunteersService().save(null,$scope.volunteer);
 			promise.$promise.then(
 					function (response) {
 						dialogs.notify("Success", response.success, {'size': 'sm' });
+					    $scope.volunteer={
+								volunteerName : "",
+								volunteerPhone : "",
+								volunteerEmail : "",
+								volunteerOccupation : "",
+								volunteerVision : "",
+								volunteerStatus : "",
+								volunteerDist : "",
+								volunteerTal : "",
+								volunteerCity : ""
+								}
 						$state.reload();
 					},
 					function (error) {

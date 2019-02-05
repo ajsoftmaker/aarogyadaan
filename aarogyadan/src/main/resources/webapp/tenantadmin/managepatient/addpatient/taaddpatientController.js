@@ -452,4 +452,22 @@ function taaddpatientController($scope,$rootScope,$state,dialogs,restAPIService,
 			$scope.patientTalFeedback = "has-error has-feedback"; 
 		}
 	}
+	
+	$scope.patientIFSCValid = false;
+	$scope.patientIFSCSuccess = false;
+	$scope.patientIFSCError = false;
+	$scope.patientIFSCFeedback = "";
+	
+	$scope.validPatientIFSC = function(valid){
+		$scope.patientIFSCValid = valid;
+		if($scope.patient.patientIFSC != undefined) {
+				$scope.patientIFSCSuccess = true;
+				$scope.patientIFSCError = false;
+				$scope.patientIFSCFeedback = "has-success has-feedback";
+		} else {
+			$scope.patientIFSCError = true;
+			$scope.patientIFSCSuccess = false;
+			$scope.patientIFSCFeedback = "has-error has-feedback"; 
+		}
+	}
 }

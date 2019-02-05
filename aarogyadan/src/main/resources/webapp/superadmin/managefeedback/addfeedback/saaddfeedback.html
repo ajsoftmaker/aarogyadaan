@@ -1,0 +1,63 @@
+<div>
+    <br>
+    <div class="row">
+        <h1>{{heading}}</h1>
+    </div>
+
+    <form name="addForm">
+        <div class="panel panel-info">
+            <div class="panel-heading">Feedback Form</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="1" ng-readonly="true" ng-model="feedback.feedbackName" name="feedbackName">
+                        </div>
+                        
+						<div class="form-group">
+                            <label>Email</label>
+                            <input class="form-control" tabindex="2" ng-readonly="true" ng-model="feedback.feedbackMail" name="feedbackMail">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="3" ng-readonly="true" ng-model="feedback.feedbackPhone" name="feedbackPhone">
+                        </div>
+                       	
+                        <div class="form-group">
+                            <label>Feedback Content</label>
+                            <label style="color: red">&nbsp*</label>
+                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="4" ng-readonly="true" ng-model="feedback.feedbackMsg" name="feedbackMsg"required/>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+
+                </div>
+
+                <div class="row text-center" ng-hide="addForm.$valid" style="color: red">Enter all mandatory fields marked with *</div>
+
+                <div class="row text-center">
+                    <button class="btn btn-success" tabindex="10" type="button" ng-disabled="addForm.$invalid" ng-click="addFeedback(1)">
+                        <i class="fa fa-check"></i>&nbsp; Show
+                    </button>
+                    
+                    <button class="btn btn-warning" tabindex="10" type="button" ng-disabled="addForm.$invalid" ng-click="addFeedback(0)">
+                        <i class="fa fa-check"></i>&nbsp; Hide
+                    </button>
+
+                    <button class="btn btn-danger" tabindex="11" type="button" ng-click="cancelAddFeedback()">
+                        <i class="fa fa-times"></i>&nbsp; Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

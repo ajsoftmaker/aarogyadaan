@@ -76,19 +76,19 @@ function saaddteamController($scope,$rootScope,$state,dialogs,restAPIService,$lo
 		$scope.heading = "Edit Team Member";
 		$scope.editMode = true;
 		var id = Number($scope.id);
-//		var promise1 = restAPIService.tenantService(id).get();
-//		promise1.$promise.then(
-//			function (response) {
-//				$scope.tenant=response;
-//				$scope.tenantRePassword = $scope.tenant.tenantPassword
-//				$scope.tenant.phone1 = Number($scope.tenant.phone1)
-//				if($scope.tenant.phone2)
-//					$scope.tenant.phone2 = Number($scope.tenant.phone2)
-//		    },
-//		    function(error){
-//		    	dialogs.error("Error", error.data.error, {'size': 'sm' });
-//		    }
-//		);
+		var promise1 = restAPIService.tenantService(id).get();
+		promise1.$promise.then(
+			function (response) {
+				$scope.tenant=response;
+				$scope.tenantRePassword = $scope.tenant.tenantPassword
+				$scope.tenant.phone1 = Number($scope.tenant.phone1)
+				if($scope.tenant.phone2)
+					$scope.tenant.phone2 = Number($scope.tenant.phone2)
+		    },
+		    function(error){
+		    	dialogs.error("Error", error.data.error, {'size': 'sm' });
+		    }
+		);
 	} else {
 		$scope.heading = "Add New Team Member";
 		$scope.editMode = false;

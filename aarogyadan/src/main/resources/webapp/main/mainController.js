@@ -19,51 +19,51 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	Talukas:
         [
             {
-            id: 41,
+            id: 1,
             dep: "Karvir"
             },
             {
-            id: 42,
+            id: 2,
             dep: "Panhala"
             },
             {
-            id: 43,
+            id: 3,
             dep: "Shahuwadi"
             },
             {
-            id: 44,
+            id: 4,
             dep: "Kagal"
             },
             {
-            id: 45,
+            id: 5,
             dep: "Hatkanangale"
             },
             {
-            id: 46,
+            id: 6,
             dep: "Shorol"
             },
             {
-            id: 47,
+            id: 7,
             dep: "Radhanagri"
             },
             {
-            id: 48,
+            id: 8,
             dep: "Gaganbawada"
             },
             {
-            id: 49,
+            id: 9,
             dep: "Bhudargari"
             },
             {
-            id: 50,
+            id: 10,
             dep: "Gadhinglaj"
             },
             {
-            id: 51,
+            id: 11,
             dep: "Chandgad"
             },
             {
-            id: 52,
+            id: 12,
             dep: "Ajra"
             }
         ]
@@ -73,55 +73,55 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	Talukas:
         [
             {
-            id: 53,
+            id: 1,
             dep: "Haveli"
             },
             {
-            id: 53,
+            id: 2,
             dep: "Khed"
             },
             {
-            id: 55,
+            id: 3,
             dep: "Junnar"
             },
             {
-            id: 56,
+            id: 4,
             dep: "Ambegaon"
             },
             {
-            id: 57,
+            id: 5,
             dep: "Maval"
             },
             {
-            id: 58,
+            id: 6,
             dep: "Mulshi"
             },
             {
-            id: 59,
+            id: 7,
             dep: "Shirur"
             },
             {
-            id: 60,
+            id: 8,
             dep: "Purandar"
             },
             {
-            id: 61,
+            id: 9,
             dep: "Velhe"
             },
             {
-            id: 62,
+            id: 10,
             dep: "Bhor"
             },
             {
-            id: 63,
+            id: 11,
             dep: "Baramati"
             },
             {
-            id: 64,
+            id: 12,
             dep: "Indapur"
             },
             {
-            id: 65,
+            id: 13,
             dep: "Daund"
             }
         ]
@@ -131,43 +131,43 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	Talukas:
         [
             {
-            id: 66,
+            id: 1,
             dep: "Miraj"
             },
             {
-            id: 67,
+            id: 2,
             dep: "Kvathe-Mahakal"
             },
             {
-            id: 68,
+            id: 3,
             dep: "Tasgaon"
             },
             {
-            id: 69,
+            id: 4,
             dep: "Jat"
             },
             {
-            id: 70,
+            id: 5,
             dep: "Walwa"
             },
             {
-            id: 71,
+            id: 6,
             dep: "Shirala"
             },
             {
-            id: 72,
+            id: 7,
             dep: "Khanapur"
             },
             {
-            id: 73,
+            id: 8,
             dep: "Atpadi"
             },
             {
-            id: 74,
+            id: 9,
             dep: "Palus"
             },
             {
-            id: 75,
+            id: 10,
             dep: "Kadegaon"
             }
         ]
@@ -177,43 +177,43 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	Talukas:
         [
             {
-            id: 76,
+            id: 1,
             dep: "Jaoli"
             },
             {
-            id: 77,
+            id: 2,
             dep: "Koregaon"
             },
             {
-            id: 78,
+            id: 3,
             dep: "Wai"
             },
             {
-            id: 79,
+            id: 4,
             dep: "Mahabaleshwar"
             },
             {
-            id: 80,
+            id: 5,
             dep: "Khandala"
             },
             {
-            id: 81,
+            id: 6,
             dep: "Phaltan"
             },
             {
-            id: 82,
+            id: 7,
             dep: "Maan"
             },
             {
-            id: 83,
+            id: 8,
             dep: "Khatav"
             },
             {
-            id: 84,
+            id: 9,
             dep: "Patan"
             },
             {
-            id: 85,
+            id: 10,
             dep: "Kard"
             }
         ]
@@ -223,47 +223,47 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	Talukas:
         [
             {
-            id: 86,
+            id: 1,
             dep: "Solapur North"
             },
             {
-            id: 87,
+            id: 2,
             dep: "Solapur South"
             },
             {
-            id: 88,
+            id: 3,
             dep: "Akkalkot"
             },
             {
-            id: 89,
+            id: 4,
             dep: "Barshi"
             },
             {
-            id: 90,
+            id: 5,
             dep: "Madha"
             },
             {
-            id: 91,
+            id: 6,
             dep: "Karmala"
             },
             {
-            id: 92,
+            id: 7,
             dep: "Mohol"
             },
             {
-            id: 93,
+            id: 8,
             dep: "Pandharpur"
             },
             {
-            id: 94,
+            id: 9,
             dep: "Malshiras"
             },
             {
-            id: 95,
+            id: 10,
             dep: "Sangole"
             },
             {
-            id: 96,
+            id: 11,
             dep: "Mangaledhe"
             }
         ]
@@ -273,55 +273,55 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	Talukas:
         [
             {
-            id: 97,
+            id: 1,
             dep: "Shevgaon"
             },
             {
-            id: 98,
+            id: 2,
             dep: "Pathardi"
             },
             {
-            id: 99,
+            id: 3,
             dep: "Parner"
             },
             {
-            id: 100,
+            id: 4,
             dep: "Sangamner"
             },
             {
-            id: 101,
+            id: 5,
             dep: "Kopargaon"
             },
             {
-            id: 102,
+            id: 6,
             dep: "Akola"
             },
             {
-            id: 103,
+            id: 7,
             dep: "Shrirampur"
             },
             {
-            id: 104,
+            id: 8,
             dep: "Nevasa"
             },
             {
-            id: 105,
+            id: 9,
             dep: "Rahata"
             },
             {
-            id: 106,
+            id: 10,
             dep: "Rahuri"
             },
             {
-            id: 107,
+            id: 11,
             dep: "Shrigonda"
             },
             {
-            id: 108,
+            id: 12,
             dep: "Karjat"
             },
             {
-            id: 109,
+            id: 13,
             dep: "Jamkhed"
             }
         ]
@@ -332,14 +332,15 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	$scope.patient={
 			patientName : "",
 			patientCity : "",
-			patientTal : "Baramati",
-			patientDist : "Pune",
+			patientTal : "",
+			patientDist : "",
 			patientPhone : "",
 			patientAadharno : "",
 			patientEmail : "",
 			patientDisese : "",
 			patientHelptype : "",
 			patientAccountno : "",
+			patientIFSC : "",
 			patientDoctorinfo : "",
 			patientDate : ""
 			}
@@ -347,22 +348,26 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	$scope.backer={
 			backerName : "",
 			backerCity : "",
-			backerTal : "Baramati",
-			backerDist : "Pune",
+			backerTal : "",
+			backerDist : "",
 			backerPhone : "",
 			backerAadharNo : "",
 			backerEmail : "",
-			backerContribution : "",
 			backerPaymentMode : "",
 			backerAmount : "",
 			backerVision : "",
-			backerPreferences : "All",
-			diseasePreferences : "All"
+			backerPreferences : "All"
 			}
 	
 	$scope.pref=["All","District","Disease"];
 	
-	$scope.disease=["All","Cancer","Heart Disease","Brain Surgery","Accident"];
+	$scope.contribution = ["Financial","Things(objects)","Services"];
+	$scope.payment = ["cash","Cheque","Demand draft","ECS"];
+	
+	$scope.disease=["All Diseases","Cancer","Heart Disease","Brain Surgery","Accident"];
+	$scope.diseasePreferences = $scope.disease[0];
+	$scope.patient.patientDisese = $scope.disease[0];
+	
 	
 	$scope.backerNameValid = false;
 	$scope.backerNameSuccess = false;
@@ -426,25 +431,35 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	
 	
 	$scope.addBacker = function() {
-			var fd = new FormData();
+//			var fd = new FormData();
 			$scope.backer.backerPhone = "" + $scope.backer.backerPhone;
 			$scope.backer.backerAadharNo = "" + $scope.backer.backerAadharNo;
 			$scope.backer.backerAmount = "" + $scope.backer.backerAmount;
-			var fileReference = document.getElementById('logofile').files[0];
+			$scope.dist = $scope.Districts[$scope.backer.backerDist-1].name;  
+			$scope.tal = $scope.Districts[$scope.backer.backerDist-1].Talukas[$scope.backer.backerTal-1].dep; 
+			$scope.backer.backerDist = $scope.dist
+			$scope.backer.backerTal = $scope.tal
+			
+			
+			
+//			var fileReference = document.getElementById('imageBacker').files[0];
 //			if (fileReference.size > 30720) {
 //				dialogs.error("Error","Please select an image with size less than 30 KB", {'size' : 'sm'});
 //				return;
 //			}
-			if (fileReference.type.indexOf('image') < 0) {
-				
-			} else {
-				
-				$scope.backer.imageBacker = fileReference;
-				fd.append('imageBacker', fileReference);
-				
-				
-			}
-			var promise = restAPIService.backersCreateService().save($scope.backer,fd);
+//			if (fileReference.type.indexOf('image') < 0) {
+//				
+//			} else {
+//				
+////				$scope.backer.imageBacker = fileReference;
+//				fd.append('imageBacker', fileReference);
+//				console.log(fd)
+//				console.log($scope.backer)
+//				
+//			}
+			
+			
+			var promise = restAPIService.backersService().save(null,$scope.backer);
 			promise.$promise.then(
 					function (response) {
 						dialogs.notify("Success", response.success, {'size': 'sm' });
@@ -456,11 +471,11 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 								backerPhone : "",
 								backerAadharNo : "",
 								backerEmail : "",
-								backerContribution : "",
 								backerPaymentMode : "",
 								backerAmount : "",
 								backerVision : ""
 								}
+						$scope.diseasePreferences = $scope.disease[0];
 					},
 					function (error) {
 						dialogs.error("Error", error.data.error, {'size': 'sm' });
@@ -782,10 +797,31 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 			$scope.patient.patientPhone = "" + $scope.patient.patientPhone;
 			$scope.patient.patientAadharno = "" + $scope.patient.patientAadharno;
 			$scope.patient.patientAccountno = "" + $scope.patient.patientAccountno;
+			
+			$scope.dist = $scope.Districts[$scope.patient.patientDist-1].name;  
+			$scope.tal = $scope.Districts[$scope.patient.patientDist-1].Talukas[$scope.patient.patientTal-1].dep; 
+			$scope.patient.patientDist = $scope.dist
+			$scope.patient.patientTal = $scope.tal
+			
 			var promise = restAPIService.patientsService().save(null,$scope.patient);
 			promise.$promise.then(
 					function (response) {
 						dialogs.notify("Success", response.success, {'size': 'sm' });
+						$scope.patient={
+								patientName : "",
+								patientCity : "",
+								patientTal : "",
+								patientDist : "",
+								patientPhone : "",
+								patientAadharno : "",
+								patientEmail : "",
+								patientHelptype : "",
+								patientAccountno : "",
+								patientIFSC : "",
+								patientDoctorinfo : "",
+								patientDate : ""
+								}
+			        	$scope.patient.patientDisese = $scope.disease[0];
 						$state.reload();
 					},
 					function (error) {
@@ -940,19 +976,33 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 		$scope.patientAccountnoValid = valid;
 		if($scope.patient.patientAccountno != undefined) {
 			var amount = ""+$scope.patient.patientAccountno;
-			if(amount.length<13 && amount.length>9) {
+			
 				$scope.patientAccountnoSuccess = true;
 				$scope.patientAccountnoError = false;
 				$scope.patientAccountnoFeedback = "has-success has-feedback";
-			} else {
-				$scope.patientAccountnoSuccess = false;
-				$scope.patientAccountnoError = true;
-				$scope.patientAccountnoFeedback = "has-error has-feedback";
-			}
+			
 		} else {
 			$scope.patientAccountnoError = true;
 			$scope.patientAccountnoSuccess = false;
 			$scope.patientAccountnoFeedback = "has-error has-feedback"; 
+		}
+	}
+	
+	$scope.patientIFSCValid = false;
+	$scope.patientIFSCSuccess = false;
+	$scope.patientIFSCError = false;
+	$scope.patientIFSCFeedback = "";
+	
+	$scope.validPatientIFSC = function(valid){
+		$scope.patientIFSCValid = valid;
+		if($scope.patient.patientIFSC != undefined) {
+				$scope.patientIFSCSuccess = true;
+				$scope.patientIFSCError = false;
+				$scope.patientIFSCFeedback = "has-success has-feedback";
+		} else {
+			$scope.patientIFSCError = true;
+			$scope.patientIFSCSuccess = false;
+			$scope.patientIFSCFeedback = "has-error has-feedback"; 
 		}
 	}
 	
@@ -1136,10 +1186,26 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	
 	$scope.addVolunteer = function() {
 		
+		$scope.dist = $scope.Districts[$scope.volDist-1].name;  
+		$scope.tal = $scope.Districts[$scope.volDist-1].Talukas[$scope.volTal-1].dep; 
+		$scope.volunteer.volunteerDist = $scope.dist
+		$scope.volunteer.volunteerTal = $scope.tal
+		
 			var promise = restAPIService.volunteersService().save(null,$scope.volunteer);
 			promise.$promise.then(
 					function (response) {
 						dialogs.notify("Success", response.success, {'size': 'sm' });
+					    $scope.volunteer={
+								volunteerName : "",
+								volunteerPhone : "",
+								volunteerEmail : "",
+								volunteerOccupation : "",
+								volunteerVision : "",
+								volunteerStatus : "",
+								volunteerDist : "",
+								volunteerTal : "",
+								volunteerCity : ""
+								}
 						$state.reload();
 					},
 					function (error) {

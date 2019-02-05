@@ -73,7 +73,7 @@
                         <div class="form-group {{backerEmailFeedback}}">
                             <label>Email</label>
                             <label style="color: red">&nbsp*</label>
-                            <input class="form-control" tabindex="5" ng-disabled="editMode" ng-change="validBackerEmail(addForm.backerEmail.$invalid)" ng-model="backer.backerEmail" name="backerEmail" ng-maxlength="50" ng-minlength="7" ng-pattern="/^[a-z]+[a-z0-9._+]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="eg :(aaa@aa.aaa)" required>
+                            <input class="form-control" tabindex="5" ng-disabled="editMode" ng-change="validBackerEmail(addForm.backerEmail.$invalid)" ng-model="backer.backerEmail" name="backerEmail" ng-maxlength="50" ng-minlength="7" ng-pattern="/^[a-z]+[a-z0-9._+]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="eg :(aaa@aa.aaa)">
                             <div ng-show="backerEmailValid" style="color: red">Please Enter valid Email ID</div>
                             <span ng-show="backerEmailSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
                             <span ng-show="backerEmailError" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -109,7 +109,7 @@
                         <div class="form-group {{backerVisionFeedback}}">
                             <label>Vision</label>
                             <label style="color: red">&nbsp*</label>
-                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="9" ng-change="validBackerVision(addForm.backerVision.$invalid)" ng-model="backer.backerVision" name="backerVision" ng-pattern="/^[a-zA-Z  ]*$/" required/>
+                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="9" ng-change="validBackerVision(addForm.backerVision.$invalid)" ng-model="backer.backerVision" name="backerVision" ng-pattern="/^[a-zA-Z,.!&  ]*$/"/>
                             <div ng-show="backerVisionValid" style="color: red">Please Enter valid Occupation</div>
                             <span ng-show="backerVisionSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
                             <span ng-show="backerVisionError" class="glyphicon glyphicon-remove form-control-feedback"></span>

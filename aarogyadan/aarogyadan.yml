@@ -5,40 +5,16 @@ database:
   user: root
   password: 
   # sever mysql psw zmwa5QlgYs7G
-  url: jdbc:mysql://localhost:3307/aarogyadan
-  #url: jdbc:mysql://localhost:3307/aarogyadan
-# 3306 for server 3307 for mac
-# use the simple server factory if you only want to run on a single port
-#server:
-#  type: simple
-#  connector:
-#    type: http
-#    port: 8080
+  url: jdbc:mysql://localhost:3306/aarogyadan
+  #url: jdbc:mysql://localhost:3306/aarogyadan
+# 3306 for server 3306 for mac
 
 server:
-#  softNofileLimit: 1000
-#  hardNofileLimit: 1000
   applicationConnectors:
     - type: http
       port: 8082
     - type: https
       port: 8443
-      keyStorePath: aarogyadan.keystore
-      keyStorePassword: example
-      validateCerts: false
-      validatePeers: false
-    #this requires the alpn-boot library on the JVM's boot classpath
-    #- type: h2
-    #  port: 8445
-    #  keyStorePath: labjump.keystore
-    #  keyStorePassword: example
-    #  validateCerts: false
-    #  validatePeers: false
-  adminConnectors:
-    - type: http
-      port: 8081
-    - type: https
-      port: 8444
       keyStorePath: aarogyadan.keystore
       keyStorePassword: example
       validateCerts: false
@@ -85,22 +61,8 @@ adminuser: sa
 adminpwd: sa
 
 domainurl: http://www.aarogyadaan.org
-#domainurl: http://localhost:8082
-#domainurl: http://www.aarogyadaan.org
 mailUsername : abhay.jadhav90@gmail.com
 mailPassword : abhay.2389
 mailHeader : Abhay
-
-# files for a course will be uploaded to this location.
-# a folder will be created within this - the name of the folder will be the course ID.
-coursefileslocation: C:/var/coursefiles
-#Guca-mole connector url
-
-# For test verify/reset scripts
-verify : verifyscript.sh
-reset : resetscript.sh
-
-# For Labjump Script execute URL
-scriptexecuterurl : http://localhost:8085/exec	
 
 authenticationCachePolicy: maximumSize=10000, expireAfterAccess=10m

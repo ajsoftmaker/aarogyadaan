@@ -52,6 +52,9 @@ public class Patient {
 	@Column(name = "patient_accountno")
 	private String patientAccountno;
 	
+	@Column(name = "patient_IFSC")
+	private String patientIFSC;
+	
 	@Column(name = "patient_doctorinfo")
 	private String patientDoctorinfo;
 	
@@ -160,6 +163,14 @@ public class Patient {
 
 	public void setPatientDate(String patientDate) {
 		this.patientDate = patientDate;
+	}
+
+	public String getPatientIFSC() {
+		return patientIFSC;
+	}
+
+	public void setPatientIFSC(String patientIFSC) {
+		this.patientIFSC = patientIFSC;
 	}
 	
 }

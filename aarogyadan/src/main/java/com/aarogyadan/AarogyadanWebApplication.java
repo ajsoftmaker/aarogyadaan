@@ -9,11 +9,13 @@ import com.aarogyadan.auth.AarogyadanAuthenticator;
 import com.aarogyadan.db.AarogyadanUserDAO;
 import com.aarogyadan.db.BackerDAO;
 import com.aarogyadan.db.BlogDAO;
+import com.aarogyadan.db.FeedbackDAO;
 import com.aarogyadan.db.PatientDAO;
 import com.aarogyadan.db.TenantDAO;
 import com.aarogyadan.db.VolunteerDAO;
 import com.aarogyadan.entity.Backer;
 import com.aarogyadan.entity.Blog;
+import com.aarogyadan.entity.Feedback;
 import com.aarogyadan.entity.LoginUser;
 import com.aarogyadan.entity.Patient;
 import com.aarogyadan.entity.Tenant;
@@ -23,6 +25,8 @@ import com.aarogyadan.resources.AarogyadanUsersResource;
 import com.aarogyadan.resources.BackerResource;
 import com.aarogyadan.resources.BackersResource;
 import com.aarogyadan.resources.BlogsResource;
+import com.aarogyadan.resources.FeedbackResource;
+import com.aarogyadan.resources.FeedbacksResource;
 import com.aarogyadan.resources.LoginResource;
 import com.aarogyadan.resources.PatientsResource;
 import com.aarogyadan.resources.TenantResource;
@@ -50,7 +54,7 @@ import io.dropwizard.views.ViewBundle;
 
 public class AarogyadanWebApplication extends Application<AarogyadanWebConfiguration> {
 	private final HibernateBundle<AarogyadanWebConfiguration> hibernateBundle = 
-            new HibernateBundle<AarogyadanWebConfiguration>(Tenant.class, Volunteer.class, LoginUser.class, 
+            new HibernateBundle<AarogyadanWebConfiguration>(Feedback.class, Tenant.class, Volunteer.class, LoginUser.class, 
             		Backer.class, Blog.class, Patient.class){
            
 				@Override
@@ -115,20 +119,9 @@ public class AarogyadanWebApplication extends Application<AarogyadanWebConfigura
 
 	private void registerLabJumpResources(AarogyadanWebConfiguration configuration,Environment environment) {
 		final AarogyadanUserDAO ljuserDAO = new AarogyadanUserDAO(hibernateBundle.getSessionFactory());
-//		final FileDAO fileDAO = new FileDAO(hibernateBundle.getSessionFactory());
-//		final StudentDAO studentDAO = new StudentDAO(hibernateBundle.getSessionFactory());
 		final TenantDAO tenantDAO = new TenantDAO(hibernateBundle.getSessionFactory());
-//		final BatchRequestDAO batchRequestDAO = new BatchRequestDAO(hibernateBundle.getSessionFactory());
-//		final CourseDAO courseDAO = new CourseDAO(hibernateBundle.getSessionFactory());
-//		final ÷BatchDAO batchDAO = new BatchDAO(hibernateBundle.getSessionFactory());
-//		final S÷tudentBatchesDAO studentBatchesDAO = new StudentBatchesDAO(hibernateBundle.getSessionFactory());
-//		final Te÷stDAO testDAO = new TestDAO(hibernateBundle.getSessionFactory());
-//		final StudentTestsDAO studentTestsDAO = new StudentTestsDAO(hibernateBundle.getSessionFactory());
-//		final GuacDProfileDAO guacDProflieDAO = new GuacDProfileDAO(hibernateBundle.getSessionFactory());
-//		final CourseCountDAO courseCountDAO = new CourseCountDAO(hibernateBundle.getSessionFactory());
 		final LoginResource loginRes = new LoginResource(configuration.getAdminuser(), configuration.getAdminpwd(), ljuserDAO);
 		environment.jersey().register(loginRes);
-		
 		
 		final TenantResource tenantResource = new TenantResource(tenantDAO, ljuserDAO);
 		environment.jersey().register(tenantResource);
@@ -150,6 +143,12 @@ public class AarogyadanWebApplication extends Application<AarogyadanWebConfigura
 		final BlogDAO blogDAO = new BlogDAO(hibernateBundle.getSessionFactory());
 		final BlogsResource blogsResource = new BlogsResource(blogDAO, ljuserDAO);
 		environment.jersey().register(blogsResource);
+		
+		final FeedbackDAO feedbackDAO = new FeedbackDAO(hibernateBundle.getSessionFactory());
+		final FeedbacksResource feedbacksResource = new FeedbacksResource(feedbackDAO);
+		environment.jersey().register(feedbacksResource);
+		final FeedbackResource feedbackResource = new FeedbackResource(feedbackDAO, ljuserDAO);
+		environment.jersey().register(feedbackResource);
 		
 		final PatientDAO patientDAO = new PatientDAO(hibernateBundle.getSessionFactory());
 		final PatientsResource patientsResource = new PatientsResource(patientDAO, ljuserDAO);

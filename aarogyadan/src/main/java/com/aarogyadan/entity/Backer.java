@@ -11,9 +11,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "backers")
-@NamedQueries({ @NamedQuery(name = "com.aarogyadan.entity.Backer.findAll", query = "SELECT t FROM Backer t"),
-		@NamedQuery(name = "com.aarogyadan.entity.Backer.findById", query = "SELECT t FROM Backer t where t.id = :id"),
-		@NamedQuery(name = "com.aarogyadan.entity.Backer.findByEmail", query = "SELECT t FROM Backer t where t.backerEmail = :backerEmail")})
+@NamedQueries({ @NamedQuery(name = "com.aarogyadan.entity.Backer.findAll", query = "SELECT b FROM Backer b"),
+		@NamedQuery(name = "com.aarogyadan.entity.Backer.findById", query = "SELECT b FROM Backer b where b.id = :id"),
+		@NamedQuery(name = "com.aarogyadan.entity.Backer.findByEmail", query = "SELECT b FROM Backer b where b.backerEmail = :backerEmail")})
 
 public class Backer {
 

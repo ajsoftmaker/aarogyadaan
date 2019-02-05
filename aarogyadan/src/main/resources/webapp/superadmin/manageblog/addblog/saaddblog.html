@@ -15,7 +15,7 @@
                         <div class="form-group {{blogTitleFeedback}}">
                             <label>Title</label>
                             <label style="color: red">&nbsp*</label>
-                            <input class="form-control" tabindex="1" ng-change="validBlogName(addForm.blogTitle.$invalid)" ng-model="blog.blogTitle" name="blogTitle" ng-pattern="/^[a-zA-Z0-9  ]*$/" required>
+                            <input class="form-control" tabindex="1" ng-change="validBlogName(addForm.blogTitle.$invalid)" ng-model="blog.blogTitle" name="blogTitle" ng-pattern="/^[^@#$%^*()+=<>~0-9]+$/" required>
                             <div ng-show="blogTitleValid" style="color: red">Please Enter valid Name</div>
                             <span ng-show="blogTitleSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
                             <span ng-show="blogTitleError" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -24,7 +24,7 @@
                         <div class="form-group {{blogWriterFeedback}}">
                             <label>Writer</label>
                             <label style="color: red">&nbsp*</label>
-                            <input class="form-control" tabindex="2" ng-change="blogWriter(addForm.blogWriter.$invalid)" ng-model="blog.blogWriter" name="blogWriter" ng-pattern="/^[a-zA-Z  ]*$/" required>
+                            <input class="form-control" tabindex="2" ng-change="blogWriter(addForm.blogWriter.$invalid)" ng-model="blog.blogWriter" name="blogWriter" ng-pattern="/^[^@#$%^*()+=<>~0-9]+$/" required>
                             <div ng-show="blogWriterValid" style="color: red">Please Enter valid blogWriter</div>
                             <span ng-show="blogWriterSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
                             <span ng-show="blogWriterError" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -33,7 +33,7 @@
                         <div class="form-group {{blogDataFeedback}}">
                             <label>Blog Content</label>
                             <label style="color: red">&nbsp*</label>
-                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="9" ng-change="validBlogData(addForm.blogData.$invalid)" ng-model="blog.blogData" name="blogData" ng-pattern="/^[a-zA-Z  ]*$/" required/>
+                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="9" ng-change="validBlogData(addForm.blogData.$invalid)" ng-model="blog.blogData" name="blogData" ng-pattern="/^[^@#$%^*()+=<>~]+$/" required/>
                             <div ng-show="blogDataValid" style="color: red">Please Enter valid Occupation</div>
                             <span ng-show="blogDataSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
                             <span ng-show="blogDataError" class="glyphicon glyphicon-remove form-control-feedback"></span>

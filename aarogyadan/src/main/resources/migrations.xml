@@ -99,6 +99,8 @@
 			</column>
 			<column name="backer_preferences" type="varchar(255)">
 			</column>
+			<column name="disease_preferences" type="varchar(255)">
+			</column>
 			<column name="backer_image" type="mediumblob">
 			</column>
 		</createTable>
@@ -131,6 +133,8 @@
 			<column name="patient_helptype" type="varchar(255)">
 			</column>
 			<column name="patient_accountno" type="varchar(255)">
+			</column>
+			<column name="patient_IFSC" type="varchar(255)">
 			</column>
 			<column name="patient_doctorinfo" type="varchar(255)">
 			</column>
@@ -186,6 +190,28 @@
 			baseTableName="loginusers" constraintName="fk_loginusers_tenant_id"
 			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
 			referencedTableName="tenants" />
+		
+		<!-- _______________________ FEEDBACKS _______________________ -->
+		<createTable tableName="feedbacks">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="feedback_name" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="feedback_msg" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="feedback_mail" type="varchar(255)">
+				
+			</column>
+			<column name="feedback_phone" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="feedback_status" type="int">
+			</column>
+		</createTable>
+		
 	</changeSet>
 	
 </databaseChangeLog>

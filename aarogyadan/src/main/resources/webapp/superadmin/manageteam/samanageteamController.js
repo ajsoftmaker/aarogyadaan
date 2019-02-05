@@ -34,6 +34,7 @@ function samanageteamController($scope, $rootScope, $state, dialogs,
 	}
 
 	$scope.addNewTeam = function() {
+		
 		$scope.parent = false;
 		$scope.mode = "add";
 		$state.go("home.samanageteam.saaddteam");

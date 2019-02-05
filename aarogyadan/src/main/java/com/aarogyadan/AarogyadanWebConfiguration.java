@@ -43,25 +43,6 @@ public class AarogyadanWebConfiguration extends Configuration {
 	
 	@Valid
 	@NotNull
-	private String coursefileslocation;
-	
-	@Valid
-	@NotNull
-	@JsonProperty("verify")
-	private String verify;
-	
-	@Valid
-	@NotNull
-	@JsonProperty("reset")
-	private String reset;
-	
-	@Valid
-	@NotNull
-	@JsonProperty("scriptexecuterurl")
-	private String scriptexecuterurl;
-	
-	@Valid
-	@NotNull
 	@JsonProperty("mailHeader")
 	private String mailHeader;
 	
@@ -146,41 +127,7 @@ public class AarogyadanWebConfiguration extends Configuration {
 	public void setMailPassword(String mailPassword) {
 		this.mailPassword = mailPassword;
 	}
-
-	@JsonProperty("coursefileslocation")
-	public String getCoursefileslocation() {
-		return coursefileslocation;
-	}
-
-	@JsonProperty("coursefileslocation")
-	public void setCoursefileslocation(String coursefileslocation) {
-		this.coursefileslocation = coursefileslocation;
-	}
-
-	public String getVerify() {
-		return verify;
-	}
-
-	public void setVerify(String verify) {
-		this.verify = verify;
-	}
-
-	public String getReset() {
-		return reset;
-	}
-
-	public void setReset(String reset) {
-		this.reset = reset;
-	}
 	
-	public String getScriptexecuterurl() {
-		return scriptexecuterurl;
-	}
-
-	public void setScriptexecuterurl(String scriptexecuterurl) {
-		this.scriptexecuterurl = scriptexecuterurl;
-	}
-
 	public String getMailHeader() {
 		return mailHeader;
 	}

@@ -164,7 +164,20 @@
 		    <groupId>io.jsonwebtoken</groupId>
 		    <artifactId>jjwt</artifactId>
 		    <version>0.6.0</version>
-		</dependency>		
+		</dependency>	
+		<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-core -->
+		<!-- <dependency>
+    		<groupId>com.sun.jersey</groupId>
+    		<artifactId>jersey-core</artifactId>
+    		<version>1.19.4</version>
+		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/com.sun.jersey.contribs/jersey-multipart -->
+		<!-- <dependency>
+    		<groupId>com.sun.jersey.contribs</groupId>
+    		<artifactId>jersey-multipart</artifactId>
+    		<version>1.19.4</version>
+		</dependency> -->
+			
 	</dependencies>
 
 	<build>

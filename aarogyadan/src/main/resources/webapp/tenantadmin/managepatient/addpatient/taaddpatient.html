@@ -69,7 +69,7 @@
                         <div class="form-group {{patientEmailFeedback}}">
                             <label>Email</label>
                             <label style="color: red">&nbsp*</label>
-                            <input class="form-control" tabindex="7" ng-disabled="editMode" ng-change="validPatientEmail(addForm.patientEmail.$invalid)" ng-model="patient.patientEmail" name="patientEmail" ng-maxlength="50" ng-minlength="7" ng-pattern="/^[a-z]+[a-z0-9._+]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="eg :(aaa@aa.aaa)" required>
+                            <input class="form-control" tabindex="7" ng-disabled="editMode" ng-change="validPatientEmail(addForm.patientEmail.$invalid)" ng-model="patient.patientEmail" name="patientEmail" ng-maxlength="50" ng-minlength="7" ng-pattern="/^[a-z]+[a-z0-9._+]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="eg :(aaa@aa.aaa)">
                             <div ng-show="patientEmailValid" style="color: red">Please Enter valid Email ID</div>
                             <span ng-show="patientEmailSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
                             <span ng-show="patientEmailError" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -101,11 +101,24 @@
                             <span ng-show="patientAccountnoSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
                             <span ng-show="patientAccountnoError" class="glyphicon glyphicon-remove form-control-feedback"></span>
                         </div>
+                        
+                        <div class="form-group {{patientIFSCFeedback}}">
+                        	<label>IFSC CODE</label>
+                            <label style="color: red">&nbsp*</label>
+									<input class="form-control" type="text" placeholder="IFSC Code" tabindex="7"
+										ng-change="validPatientIFSC(addFormPatient.patientIFSC.$invalid)"
+										ng-model="patient.patientIFSC" name="patientIFSC"
+										ng-pattern="/^[A-Za-z]{4}\d{7}$/">
+									<div ng-show="patientIFSCValid" style="color: red">
+										Please Enter valid IFSC Code</div>
+									<span ng-show="patientIFSCSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+									<span ng-show="patientIFSCError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+								</div>
 
                         <div class="form-group {{patientDoctorinfoFeedback}}">
                             <label>Doctor Information</label>
                             <label style="color: red">&nbsp*</label>
-                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="11" ng-change="validPatientDoctorinfo(addForm.patientDoctorinfo.$invalid)" ng-model="patient.patientDoctorinfo" name="patientDoctorinfo" ng-pattern="/^[a-zA-Z  ]*$/" required/>
+                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="11" ng-change="validPatientDoctorinfo(addForm.patientDoctorinfo.$invalid)" ng-model="patient.patientDoctorinfo" name="patientDoctorinfo" ng-pattern="/^[a-zA-Z,.!&  ]*$/" required/>
                             <div ng-show="patientDoctorinfoValid" style="color: red">Please Enter valid Occupation</div>
                             <span ng-show="patientDoctorinfoSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
                             <span ng-show="patientDoctorinfoError" class="glyphicon glyphicon-remove form-control-feedback"></span>

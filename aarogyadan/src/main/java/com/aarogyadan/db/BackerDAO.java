@@ -20,18 +20,19 @@ public class BackerDAO extends AbstractDAO<Backer> {
 
 	public Response create(Backer backer) {
 		Response response = null;
-		Backer getBacker = findByEmail(backer.getBackerEmail());
-		if (getBacker != null) {
-			response = Response.notModified("A backer with this code already exists").build();
-		} else {
+//		Backer getBacker = findByEmail(backer.getBackerEmail());
+//		if (getBacker != null) {
+//			response = Response.notModified("A backer with this code already exists").build();
+//		} else {
 			persist(backer);
 			response = Response.ok().build();
-		}
+//		}
 		return response;
 	}
 
 
 	public Backer update(Backer backer) {
+		System.out.println("Inside DAO  : "+backer);
 		return persist(backer);
 	}
 

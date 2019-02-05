@@ -145,6 +145,16 @@ function config($stateProvider, $urlRouterProvider) {
 		controller : "saaddblogController"
 	})
 	
+	.state('home.samanagefeedback', {
+		templateUrl : 'superadmin/managefeedback/samanagefeedback.html',
+		url : '/samanagefeedback',
+		controller : "samanagefeedbackController"
+	}).state('home.samanagefeedback.saaddfeedback', {
+		templateUrl : 'superadmin/managefeedback/addfeedback/saaddfeedback.html',
+		url : '/saaddfeedback',
+		controller : "saaddfeedbackController"
+	})
+	
 	//samanagevolunteerController
 	
 	
@@ -194,5 +204,15 @@ function config($stateProvider, $urlRouterProvider) {
 		templateUrl : 'tenantadmin/manageblog/addblog/taaddblog.html',
 		url : '/taaddblog',
 		controller : "taaddblogController"
+	})
+	
+	.state('home.tamanagefeedback', {
+		templateUrl : 'tenantadmin/managefeedback/tamanagefeedback.html',
+		url : '/tamanagefeedback',
+		controller : "tamanagefeedbackController"
+	}).state('home.tamanagefeedback.taaddfeedback', {
+		templateUrl : 'tenantadmin/managefeedback/addfeedback/taaddfeedback.html',
+		url : '/taaddfeedback',
+		controller : "taaddfeedbackController"
 	})
 }

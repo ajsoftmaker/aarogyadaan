@@ -4,6 +4,321 @@ angular.module('aarogyadanWebApp')
 	.controller('saaddbackerController', saaddbackerController);
 
 function saaddbackerController($scope,$rootScope,$state,dialogs,restAPIService,$location){
+	$scope.Districts =[
+	{
+	    id: 1, name: "Kolhapur", label: "Kolhapur",
+		Talukas:
+	        [
+	            {
+	            id: 1,
+	            dep: "Karvir"
+	            },
+	            {
+	            id: 2,
+	            dep: "Panhala"
+	            },
+	            {
+	            id: 3,
+	            dep: "Shahuwadi"
+	            },
+	            {
+	            id: 4,
+	            dep: "Kagal"
+	            },
+	            {
+	            id: 5,
+	            dep: "Hatkanangale"
+	            },
+	            {
+	            id: 6,
+	            dep: "Shorol"
+	            },
+	            {
+	            id: 7,
+	            dep: "Radhanagri"
+	            },
+	            {
+	            id: 8,
+	            dep: "Gaganbawada"
+	            },
+	            {
+	            id: 9,
+	            dep: "Bhudargari"
+	            },
+	            {
+	            id: 10,
+	            dep: "Gadhinglaj"
+	            },
+	            {
+	            id: 11,
+	            dep: "Chandgad"
+	            },
+	            {
+	            id: 12,
+	            dep: "Ajra"
+	            }
+	        ]
+	},
+	{
+	    id: 2, name: "Pune", label: "Pune",
+		Talukas:
+	        [
+	            {
+	            id: 1,
+	            dep: "Haveli"
+	            },
+	            {
+	            id: 2,
+	            dep: "Khed"
+	            },
+	            {
+	            id: 3,
+	            dep: "Junnar"
+	            },
+	            {
+	            id: 4,
+	            dep: "Ambegaon"
+	            },
+	            {
+	            id: 5,
+	            dep: "Maval"
+	            },
+	            {
+	            id: 6,
+	            dep: "Mulshi"
+	            },
+	            {
+	            id: 7,
+	            dep: "Shirur"
+	            },
+	            {
+	            id: 8,
+	            dep: "Purandar"
+	            },
+	            {
+	            id: 9,
+	            dep: "Velhe"
+	            },
+	            {
+	            id: 10,
+	            dep: "Bhor"
+	            },
+	            {
+	            id: 11,
+	            dep: "Baramati"
+	            },
+	            {
+	            id: 12,
+	            dep: "Indapur"
+	            },
+	            {
+	            id: 13,
+	            dep: "Daund"
+	            }
+	        ]
+	},
+	{
+	    id: 3, name: "Sangli", label: "Sangli",
+		Talukas:
+	        [
+	            {
+	            id: 1,
+	            dep: "Miraj"
+	            },
+	            {
+	            id: 2,
+	            dep: "Kvathe-Mahakal"
+	            },
+	            {
+	            id: 3,
+	            dep: "Tasgaon"
+	            },
+	            {
+	            id: 4,
+	            dep: "Jat"
+	            },
+	            {
+	            id: 5,
+	            dep: "Walwa"
+	            },
+	            {
+	            id: 6,
+	            dep: "Shirala"
+	            },
+	            {
+	            id: 7,
+	            dep: "Khanapur"
+	            },
+	            {
+	            id: 8,
+	            dep: "Atpadi"
+	            },
+	            {
+	            id: 9,
+	            dep: "Palus"
+	            },
+	            {
+	            id: 10,
+	            dep: "Kadegaon"
+	            }
+	        ]
+	},
+	{
+	    id: 4, name: "Satara", label: "Satara",
+		Talukas:
+	        [
+	            {
+	            id: 1,
+	            dep: "Jaoli"
+	            },
+	            {
+	            id: 2,
+	            dep: "Koregaon"
+	            },
+	            {
+	            id: 3,
+	            dep: "Wai"
+	            },
+	            {
+	            id: 4,
+	            dep: "Mahabaleshwar"
+	            },
+	            {
+	            id: 5,
+	            dep: "Khandala"
+	            },
+	            {
+	            id: 6,
+	            dep: "Phaltan"
+	            },
+	            {
+	            id: 7,
+	            dep: "Maan"
+	            },
+	            {
+	            id: 8,
+	            dep: "Khatav"
+	            },
+	            {
+	            id: 9,
+	            dep: "Patan"
+	            },
+	            {
+	            id: 10,
+	            dep: "Kard"
+	            }
+	        ]
+	},
+	{
+	    id: 5, name: "Solapur", label: "Solapur",
+		Talukas:
+	        [
+	            {
+	            id: 1,
+	            dep: "Solapur North"
+	            },
+	            {
+	            id: 2,
+	            dep: "Solapur South"
+	            },
+	            {
+	            id: 3,
+	            dep: "Akkalkot"
+	            },
+	            {
+	            id: 4,
+	            dep: "Barshi"
+	            },
+	            {
+	            id: 5,
+	            dep: "Madha"
+	            },
+	            {
+	            id: 6,
+	            dep: "Karmala"
+	            },
+	            {
+	            id: 7,
+	            dep: "Mohol"
+	            },
+	            {
+	            id: 8,
+	            dep: "Pandharpur"
+	            },
+	            {
+	            id: 9,
+	            dep: "Malshiras"
+	            },
+	            {
+	            id: 10,
+	            dep: "Sangole"
+	            },
+	            {
+	            id: 11,
+	            dep: "Mangaledhe"
+	            }
+	        ]
+	},
+	{
+	    id: 6, name: "Ahmednagar", label: "Ahmednagar",
+		Talukas:
+	        [
+	            {
+	            id: 1,
+	            dep: "Shevgaon"
+	            },
+	            {
+	            id: 2,
+	            dep: "Pathardi"
+	            },
+	            {
+	            id: 3,
+	            dep: "Parner"
+	            },
+	            {
+	            id: 4,
+	            dep: "Sangamner"
+	            },
+	            {
+	            id: 5,
+	            dep: "Kopargaon"
+	            },
+	            {
+	            id: 6,
+	            dep: "Akola"
+	            },
+	            {
+	            id: 7,
+	            dep: "Shrirampur"
+	            },
+	            {
+	            id: 8,
+	            dep: "Nevasa"
+	            },
+	            {
+	            id: 9,
+	            dep: "Rahata"
+	            },
+	            {
+	            id: 10,
+	            dep: "Rahuri"
+	            },
+	            {
+	            id: 11,
+	            dep: "Shrigonda"
+	            },
+	            {
+	            id: 12,
+	            dep: "Karjat"
+	            },
+	            {
+	            id: 13,
+	            dep: "Jamkhed"
+	            }
+	        ]
+	}
+	];
+	
 	$scope.backer={
 			backerName : "",
 			backerCity : "",
@@ -16,7 +331,6 @@ function saaddbackerController($scope,$rootScope,$state,dialogs,restAPIService,$
 			backerPaymentMode : "",
 			backerAmount : "",
 			backerVision : "",
-			backerPreferences : "All"
 			}
 	
 	$scope.dist=["Akola","Amravati","Buldana","Yavatmal","Washim","Aurangabad","Beed","Jalna","Osmanabad","Nanded","Latur","Parbhani","Hingoli","Mumbai City",
@@ -26,6 +340,12 @@ function saaddbackerController($scope,$rootScope,$state,dialogs,restAPIService,$
 	$scope.tal=["Haveli","Khed","Maval","Bhor","Baramati","Wai","Phaltan","Karad","Miraj","Walwa","Khanapur"];
 	
 	$scope.pref=["All","District","Taluka","City"];
+	
+	$scope.contribution = ["Financial","Things(objects)","Services"];
+	$scope.payment = ["cash","Cheque","Demand draft","ECS"];
+	
+	$scope.disease=["All Diseases","Cancer","Heart Disease","Brain Surgery","Accident"];
+	$scope.diseasePreferences = $scope.disease[0];
 	
 	$scope.backerNameValid = false;
 	$scope.backerNameSuccess = false;
@@ -125,6 +445,13 @@ function saaddbackerController($scope,$rootScope,$state,dialogs,restAPIService,$
 	}
 	
 	$scope.addBacker = function() {
+		$scope.backer.backerPhone = "" + $scope.backer.backerPhone;
+		$scope.backer.backerAadharNo = "" + $scope.backer.backerAadharNo;
+		$scope.backer.backerAmount = "" + $scope.backer.backerAmount;
+		$scope.dist = $scope.Districts[$scope.backer.backerDist-1].name;  
+		$scope.tal = $scope.Districts[$scope.backer.backerDist-1].Talukas[$scope.backer.backerTal-1].dep; 
+		$scope.backer.backerDist = $scope.dist
+		$scope.backer.backerTal = $scope.tal
 		if($scope.mode=="edit"){
 			var promise = restAPIService.backerService($scope.backer.id).update($scope.backer);
 			promise.$promise.then(

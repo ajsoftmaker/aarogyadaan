@@ -18,6 +18,8 @@ function restAPIService($resource, $rootScope, $http) {
 		
 		patientsService : patientsService,
 		blogsService : blogsService,
+		feedbacksService : feedbacksService,
+		feedbackService : feedbackService,
 		
 		superAdminService : superAdminService,
 		coursesService : coursesService,
@@ -55,6 +57,23 @@ function restAPIService($resource, $rootScope, $http) {
 		getCourseCountService : getCourseCountService,
 		downloadFileService : downloadFileService
 		
+	}
+	
+	function feedbacksService() {
+		var url = $rootScope.apiUrl + "feedbacks";
+		return $resource(url);
+	}
+	
+	function feedbackService(id) {
+		var url = $rootScope.apiUrl + "feedback/"+id;
+		return $resource(url, null, {
+			'update' : {
+				method : 'PUT'
+			},
+			'get' : {
+				method : 'GET'
+			}
+		});
 	}
 
 	function mianService() {
