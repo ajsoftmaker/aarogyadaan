@@ -20,6 +20,7 @@ function restAPIService($resource, $rootScope, $http) {
 		blogsService : blogsService,
 		feedbacksService : feedbacksService,
 		feedbackService : feedbackService,
+		eventsService :eventsService,
 		
 		superAdminService : superAdminService,
 		coursesService : coursesService,
@@ -57,6 +58,11 @@ function restAPIService($resource, $rootScope, $http) {
 		getCourseCountService : getCourseCountService,
 		downloadFileService : downloadFileService
 		
+	}
+	
+	function eventsService() {
+		var url = $rootScope.apiUrl + "events";
+		return $resource(url);
 	}
 	
 	function feedbacksService() {

@@ -527,21 +527,30 @@
 								</div>
 							</li>
 							<hr>
-							<li class="col-sm-12"><label>Preferences</label> <select
-								class="form-control" ng-model="backer.backerPreferences"
-								name="backerPreferences" ng-options="x for x in pref" required>
-							</select>
-								<div ng-show="backer.backerPreferences=='Disease'">
+							<li class="col-sm-12">
+							<label>Preferences</label>
+							<label class="checkbox-inline" style="margin-left: 10px;"> <input ng-model="preferencesDistrict" type="checkbox" style="height:0px !important;">District </label>
+							<label class="checkbox-inline"> <input ng-model="preferencesTaluka" type="checkbox" style="height:0px !important;">Taluka </label>
+							<label class="checkbox-inline"> <input ng-model="preferencesDisease" type="checkbox" style="height:0px !important;">Disease  </label>
+								<br>
+							 
+								<div ng-show="preferencesDisease">
 									<br> <select class="form-control"
 										ng-model="diseasePreferences" name="diseasePreferences"
 										ng-options="d for d in disease">
 									</select>
 								</div>
 
-								<div ng-show="backer.backerPreferences=='District'"
+								<div ng-show="preferencesDistrict"
 									ng-click="myData()" ng-dropdown-multiselect=""
 									options="Districts" selected-model="example14model"
-									extra-settings="example14settings"></div></li>
+									extra-settings="example14settings"></div>
+									
+								<div ng-show="preferencesTaluka"
+								ng-dropdown-multiselect="" options="example15data" selected-model="example15model" 
+								extra-settings="example15settings"></div>
+							
+							</li>
 							<li class="col-sm-12">
 								<div class="row text-center" ng-hide="addForm.$valid"
 									style="color: red">Enter * fields are mandatory</div>

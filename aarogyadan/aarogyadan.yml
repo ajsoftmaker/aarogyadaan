@@ -5,7 +5,7 @@ database:
   user: root
   password: 
   # sever mysql psw zmwa5QlgYs7G
-  url: jdbc:mysql://localhost:3306/aarogyadan
+  url: jdbc:mysql://localhost:3306/aarogyadan?useUnicode=true&characterEncoding=UTF-8
   #url: jdbc:mysql://localhost:3306/aarogyadan
 # 3306 for server 3306 for mac
 

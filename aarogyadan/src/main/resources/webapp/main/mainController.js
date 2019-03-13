@@ -12,6 +12,11 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 	$scope.example14data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Lisa"}, {id: 4, label: "Nicole"}, {id: 5, label: "Danny"}, {id: 6, label: "Dan"}, {id: 7, label: "Dean"}, {id: 8, label: "Adam"}, {id: 9, label: "Uri"}, {id: 10, label: "Phil"} ]; 
 	$scope.example14settings = { scrollableHeight: '200px', scrollable: true,smartButtonMaxItems: 3, smartButtonTextConverter: function(itemText, originalItem) { return itemText; }};
 	$scope.example14model = [];
+	$scope.example15model = []; 
+	$scope.example15data = [ {id: 1,label: "Haveli"},{id: 2,label: "Khed"},{id: 3,label: "Junnar"},{id: 4,label: "Ambegaon"},
+        {id: 5,label: "Maval"},{id: 6,label: "Mulshi"},{id: 7,label: "Shirur"},{id: 8,label: "Purandar"},{id: 9,label: "Velhe"},
+        {id: 10,label: "Bhor"},{id: 11,label: "Baramati"},{id: 12,label: "Indapur"},{id: 13,label: "Daund"} ]; 
+	$scope.example15settings = { scrollableHeight: '200px', scrollable: true,smartButtonMaxItems: 3, smartButtonTextConverter: function(itemText, originalItem) { return itemText; } };
 	
 	 $scope.Districts =[
 {
@@ -359,7 +364,9 @@ function mainController ($http, $rootScope, $scope, $state, restAPIService, dial
 			backerPreferences : "All"
 			}
 	
-	$scope.pref=["All","District","Disease"];
+	$scope.pref=["All","District","Taluka","Disease"];
+	$scope.Tals = ["Haveli","Khed","Junnar","Ambegaon","Maval","Mulshi","Shirur","Purandar","Velhe",
+	               "Bhor","Baramati","Indapur","Daund"];
 	
 	$scope.contribution = ["Financial","Things(objects)","Services"];
 	$scope.payment = ["cash","Cheque","Demand draft","ECS"];

@@ -16,7 +16,7 @@ var aarogyadanWebApp = angular.module(
 						$rootScope.apiUrl="api/"
 						localStorage.removeItem("rootScope");
 					}else {
-						window.location.href = "#/main";//main
+						window.location.href = "#/blog";//main
 					}
 				}
 			}
@@ -87,6 +87,16 @@ function config($stateProvider, $urlRouterProvider) {
 		templateUrl : 'faq/faq.html',
 		controller : "faqController"
 	})
+	.state('blog', {
+		url : '/blog',
+		templateUrl : 'blog/blog.html',
+		controller : "blogController"
+	})
+	.state('event', {
+		url : '/event',
+		templateUrl : 'event/event.html',
+		controller : "eventController"
+	})
 	
 	// ------------ SUPER ADMIN WORKFLOW ---------------
 	.state('home.sadashboard', {
@@ -153,6 +163,16 @@ function config($stateProvider, $urlRouterProvider) {
 		templateUrl : 'superadmin/managefeedback/addfeedback/saaddfeedback.html',
 		url : '/saaddfeedback',
 		controller : "saaddfeedbackController"
+	})
+	
+	.state('home.samanageevent', {
+		templateUrl : 'superadmin/manageevent/samanageevent.html',
+		url : '/samanageevent',
+		controller : "samanageeventController"
+	}).state('home.samanageevent.saaddevent', {
+		templateUrl : 'superadmin/manageevent/addevent/saaddevent.html',
+		url : '/saaddevent',
+		controller : "saaddeventController"
 	})
 	
 	//samanagevolunteerController

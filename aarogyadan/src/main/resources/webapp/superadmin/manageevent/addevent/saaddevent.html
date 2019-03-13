@@ -1,0 +1,83 @@
+<div>
+    <br>
+    <div class="row">
+        <h1>{{heading}}</h1>
+    </div>
+
+    <form name="addForm">
+        <div class="panel panel-info">
+            <div class="panel-heading">Event Form</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group {{eventTitleFeedback}}">
+                            <label>Title</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="1" ng-change="validEventTitle(addForm.eventTitle.$invalid)" ng-model="event.eventTitle" name="eventTitle" ng-pattern="/^[^@#$%^*()+=<>~0-9]+$/" required>
+                            <div ng-show="eventTitleValid" style="color: red">Please Enter valid Name</div>
+                            <span ng-show="eventTitleSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="eventTitleError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+
+                        <div class="form-group {{eventWriterFeedback}}">
+                            <label>Date</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input type="text" class="form-control date"
+								id="dateFrom"placeholder="Date" ng-click="dateFrom=true"
+								datepicker-popup="dd-MMM-yyyy" ng-model="bDate" min-date="mindate"
+								is-open="dateFrom" datepicker-options="dateOptions"
+								date-disabled="disabled(date, mode)" ng-required="true"
+								close-text="Close" ng-change="onBDate(bDate)">
+                        </div>
+                        
+                        <div class="form-group {{eventTimeFeedback}}">
+                            <label>Timing</label>
+                            <label style="color: red">&nbsp*</label>
+                            <input class="form-control" tabindex="2" ng-change="validEventTime(addForm.eventTime.$invalid)" ng-model="event.eventTime" name="eventTime" ng-pattern="/^[^@#$%^*()+=<>~]+$/" required>
+                            <div ng-show="eventTimeValid" style="color: red">Please Enter valid Event Time</div>
+                            <span ng-show="eventTimeSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="eventTimeError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                       	
+                        <div class="form-group {{eventInfoFeedback}}">
+                            <label>Information</label>
+                            <label style="color: red">&nbsp*</label>
+                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="9" ng-change="validEventInfo(addForm.eventInfo.$invalid)" ng-model="event.eventInfo" name="eventInfo" ng-pattern="/^[^@#$%^*()+=<>~]+$/" required></textarea>
+                            <div ng-show="eventInfoValid" style="color: red">Please Enter valid Information</div>
+                            <span ng-show="eventInfoSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="eventInfoError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                        <div class="form-group {{eventAddressFeedback}}">
+                            <label>Address</label>
+                            <label style="color: red">&nbsp*</label>
+                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="9" ng-change="validEventAddress(addForm.eventAddress.$invalid)" ng-model="event.eventAddress" name="eventAddress" ng-pattern="/^[^@#$%^*()+=<>~]+$/" required></textarea>
+                            <div ng-show="eventAddressValid" style="color: red">Please Enter valid Occupation</div>
+                            <span ng-show="eventAddressSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <span ng-show="eventAddressError" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+
+                </div>
+
+                <div class="row text-center" ng-hide="addForm.$valid" style="color: red">Enter all mandatory fields marked with *</div>
+
+                <div class="row text-center">
+                    <button class="btn btn-success" tabindex="10" type="button" ng-disabled="addForm.$invalid" ng-click="addEvent()">
+                        <i class="fa fa-check"></i>&nbsp; Save
+                    </button>
+
+                    <button class="btn btn-danger" tabindex="11" type="button" ng-click="cancelAddEvent()">
+                        <i class="fa fa-times"></i>&nbsp; Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

@@ -4,8 +4,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Date;
 import java.util.logging.Logger;
 
+import javax.annotation.Resource;
+import javax.servlet.ServletContext;
 import javax.servlet.http.*;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -33,9 +36,14 @@ import io.dropwizard.hibernate.UnitOfWork;
 @Produces(MediaType.APPLICATION_JSON)
 public class BackersResource {
 	private final BackerDAO backerDAO;
+	
 //	private final AarogyadanUserDAO userDAO;
 	private final Logger logger = Logger.getLogger(BackersResource.class.getName());
-	private static String UPLOADS_DIR = "/aarogyadan/src/main/resources/webapp/uploads";
+	private static String UPLOADS_DIR = "src/main/resources/webapp/uploads";
+	@Context 
+	private HttpServletRequest request;
+//	@Resource 
+//    private ServletContext servletContext; 
 
 	public BackersResource(BackerDAO dao) {
 		this.backerDAO = dao;
@@ -88,12 +96,13 @@ public class BackersResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response addLogo( 
 			@FormDataParam("backerImage") InputStream is,
-			@FormDataParam("backerImage") FormDataContentDisposition fileDetail,
-			@Context HttpServletRequest request
+			@FormDataParam("backerImage") FormDataContentDisposition fileDetail
 			) {
 		try{
-//			System.out.println(request.getServletContext());
-			String path = UPLOADS_DIR + File.separator + fileDetail.getFileName();
+			System.out.println("DATA : "+request.getServletContext().getContextPath());
+			System.out.println("DATA1 : "+request.getServletContext().getRealPath(""));
+			String FileNewName = "backer"+new Date()+".png";
+			String path = request.getServletContext().getContextPath()+UPLOADS_DIR + File.separator + FileNewName;//fileDetail.getFileName();
 			System.out.println("Path : "+path);
 			saveFile(is, path);
 			Backer backerObj = new Backer();

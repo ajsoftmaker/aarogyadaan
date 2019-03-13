@@ -33,7 +33,7 @@
                         <div class="form-group {{blogDataFeedback}}">
                             <label>Blog Content</label>
                             <label style="color: red">&nbsp*</label>
-                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="9" ng-change="validBlogData(addForm.blogData.$invalid)" ng-model="blog.blogData" name="blogData" ng-pattern="/^[^@#$%^*()+=<>~]+$/" required/>
+                            <textarea class="form-control" rows="5" autocomplete="off" tabindex="9" ng-change="validBlogData(addForm.blogData.$invalid)" ng-model="blog.blogData" name="blogData" ng-pattern="/^[^@#$%^*()+=<>~]+$/" required></textarea>
                             <div ng-show="blogDataValid" style="color: red">Please Enter valid Occupation</div>
                             <span ng-show="blogDataSuccess" class="glyphicon glyphicon-ok form-control-feedback"></span>
                             <span ng-show="blogDataError" class="glyphicon glyphicon-remove form-control-feedback"></span>

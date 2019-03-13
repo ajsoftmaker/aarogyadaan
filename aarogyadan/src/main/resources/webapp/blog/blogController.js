@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('aarogyadanWebApp')
-	.controller('faqController', faqController);
+	.controller('blogController', blogController);
 
-faqController.$inject = ['$http', '$rootScope', '$scope', '$state', 'restAPIService', 'dialogs'];
+blogController.$inject = ['$http', '$rootScope', '$scope', '$state', 'restAPIService', 'dialogs'];
 
-function faqController ($http, $rootScope, $scope, $state, restAPIService, dialogs) {
+function blogController ($http, $rootScope, $scope, $state, restAPIService, dialogs) {
 	$rootScope.apiUrl = "/api/";
 	$scope.myData=myData;
 	$scope.sData="";
@@ -17,7 +17,6 @@ function faqController ($http, $rootScope, $scope, $state, restAPIService, dialo
         {id: 5,label: "Maval"},{id: 6,label: "Mulshi"},{id: 7,label: "Shirur"},{id: 8,label: "Purandar"},{id: 9,label: "Velhe"},
         {id: 10,label: "Bhor"},{id: 11,label: "Baramati"},{id: 12,label: "Indapur"},{id: 13,label: "Daund"} ]; 
 	$scope.example15settings = { scrollableHeight: '200px', scrollable: true,smartButtonMaxItems: 3, smartButtonTextConverter: function(itemText, originalItem) { return itemText; } };
-	
 	
 	$scope.Districts =[
 	{

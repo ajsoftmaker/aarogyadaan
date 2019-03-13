@@ -199,7 +199,7 @@
 			<column name="feedback_name" type="varchar(255)">
 				<constraints nullable="false" />
 			</column>
-			<column name="feedback_msg" type="varchar(255)">
+			<column name="feedback_msg" type="text">
 				<constraints nullable="false" />
 			</column>
 			<column name="feedback_mail" type="varchar(255)">
@@ -209,6 +209,28 @@
 				<constraints nullable="false" />
 			</column>
 			<column name="feedback_status" type="int">
+			</column>
+		</createTable>
+		
+		<!-- _______________________ EVENTS _______________________ -->
+		<createTable tableName="events">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="event_title" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="event_date" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="event_time" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="event_info" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="event_address" type="varchar(255)">
+				<constraints nullable="false" />
 			</column>
 		</createTable>
 		
